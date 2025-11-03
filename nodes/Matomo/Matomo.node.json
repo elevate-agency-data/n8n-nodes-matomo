@@ -1,0 +1,20 @@
+{
+  "node": "n8n-nodes-matomo.Matomo",
+  "nodeVersion": "1.0",
+  "codexVersion": "1.0",
+  "categories": [
+    "Matomo"
+  ],
+  "resources": {
+    "credentialDocumentation": [
+      {
+        "url": "https://developer.matomo.org/api-reference/reporting-api"
+      }
+    ],
+    "primaryDocumentation": [
+      {
+        "url": "https://developer.matomo.org/api-reference/reporting-api"
+      }
+    ]
+  }
+}
