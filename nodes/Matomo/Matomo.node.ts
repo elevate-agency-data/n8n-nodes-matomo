@@ -96,10 +96,10 @@ export class Matomo implements INodeType {
         noDataExpression: true,
         displayOptions: { show: { resource: ['abTesting'] } },
         options: [
-            { name: 'Add Experiment', value: 'abTestingAddExperimentGet', action: 'Adds experiment', description: 'Adds a new A/B test experiment' },
-            { name: 'Archive Experiment', value: 'abTestingArchiveExperimentGet', action: 'Archives experiment', description: 'Archives a finished experiment' },
-            { name: 'Delete Experiment', value: 'abTestingDeleteExperimentGet', action: 'Deletes experiment', description: 'Deletes a specific experiment for a site' },
-            { name: 'Finish Experiment', value: 'abTestingFinishExperimentGet', action: 'Finishes experiment', description: 'Finishes an active A/B experiment' },
+            { name: 'Add Experiment', value: 'abTestingAddExperimentPost', action: 'Adds experiment', description: 'Adds a new A/B test experiment' },
+            { name: 'Archive Experiment', value: 'abTestingArchiveExperimentPost', action: 'Archives experiment', description: 'Archives a finished experiment' },
+            { name: 'Delete Experiment', value: 'abTestingDeleteExperimentPost', action: 'Deletes experiment', description: 'Deletes a specific experiment for a site' },
+            { name: 'Finish Experiment', value: 'abTestingFinishExperimentPost', action: 'Finishes experiment', description: 'Finishes an active A/B experiment' },
             { name: 'Get Active Experiments', value: 'abTestingActiveExperimentsGet', action: 'Gets active experiments', description: 'Gets the list of active experiments for a site' },
             { name: 'Get All Experiments', value: 'abTestingAllExperimentsGet', action: 'Gets all experiments', description: 'Gets the list of all experiments for a site' },
             { name: 'Get Available Statuses', value: 'abTestingAvailableStatusesGet', action: 'Gets available statuses', description: 'Gets the list of statuses available for experiments' },
@@ -112,10 +112,10 @@ export class Matomo implements INodeType {
             { name: 'Get JS Include Template', value: 'abTestingJSIncludeTemplateGet', action: 'Gets JS include template', description: 'Gets the JavaScript include template for embedding experiments' },
             { name: 'Get Metric Details', value: 'abTestingMetricDetailsGet', action: 'Gets metric details', description: 'Gets metric details' },
             { name: 'Get Metrics Overview', value: 'abTestingMetricsOverviewGet', action: 'Gets metrics overview', description: 'Gets metrics overview' },
-            { name: 'Start Experiment', value: 'abTestingStartExperimentGet', action: 'Starts experiment', description: 'Starts a paused or scheduled experiment' },
-            { name: 'Update Experiment', value: 'abTestingUpdateExperimentGet', action: 'Updates experiment', description: 'Updates settings of an existing A/B experiment' }
+            { name: 'Start Experiment', value: 'abTestingStartExperimentPost', action: 'Starts experiment', description: 'Starts a paused or scheduled experiment' },
+            { name: 'Update Experiment', value: 'abTestingUpdateExperimentPost', action: 'Updates experiment', description: 'Updates settings of an existing A/B experiment' }
         ],
-        default: 'abTestingAddExperimentGet',
+        default: 'abTestingAddExperimentPost',
       },
 			{
         displayName: 'Operation',
@@ -167,14 +167,14 @@ export class Matomo implements INodeType {
         noDataExpression: true,
         displayOptions: { show: { resource: ['advertisingConversionExport'] } },
         options: [
-          { name: 'Add Conversion Export', value: 'advertisingConversionExportAddGet', action: 'Adds conversion export', description: 'Adds a new conversion export with specified parameters' },
-          { name: 'Delete Conversion Export', value: 'advertisingConversionExportDeleteGet', action: 'Deletes conversion export', description: 'Deletes a specified conversion export for a site' },
-          { name: 'Get Conversion Export', value: 'advertisingConversionExportGetGet', action: 'Gets conversion export', description: 'Gets details of a specific conversion export' },
+          { name: 'Add Conversion Export', value: 'advertisingConversionExportAddPost', action: 'Adds conversion export', description: 'Adds a new conversion export with specified parameters' },
+          { name: 'Delete Conversion Export', value: 'advertisingConversionExportDelete', action: 'Deletes conversion export', description: 'Deletes a specified conversion export for a site' },
+          { name: 'Get Conversion Export', value: 'advertisingConversionExportGet', action: 'Gets conversion export', description: 'Gets details of a specific conversion export' },
           { name: 'Get Conversion Exports', value: 'advertisingConversionExportListGet', action: 'Gets conversion exports',description: 'Gets list of conversion exports for a given site' },
-          { name: 'Regenerate Access Token', value: 'advertisingConversionExportRegenerateAccessTokenGet', action: 'Regenerates access token', description: 'Regenerates an access token for a specific conversion export' },
-          { name: 'Update Conversion Export', value: 'advertisingConversionExportUpdateGet', action: 'Updates conversion export', description: 'Updates details of a specific conversion export (name, type, parameters)' }
+          { name: 'Regenerate Access Token', value: 'advertisingConversionExportRegenerateAccessTokenPost', action: 'Regenerates access token', description: 'Regenerates an access token for a specific conversion export' },
+          { name: 'Update Conversion Export', value: 'advertisingConversionExportUpdatePost', action: 'Updates conversion export', description: 'Updates details of a specific conversion export (name, type, parameters)' }
         ],
-        default: 'advertisingConversionExportAddGet',
+        default: 'advertisingConversionExportAddPost',
       },
       {
         displayName: 'Operation',
@@ -183,15 +183,15 @@ export class Matomo implements INodeType {
         noDataExpression: true,
         displayOptions: { show: { resource: ['annotation'] } },
         options: [
-          { name: 'Add Annotation', value: 'annotationAddGet', action: 'Adds annotation', description: 'Adds a new annotation for a given site and date' },
-          { name: 'Delete All Annotations', value: 'annotationDeleteAllGet', action: 'Deletes all annotations', description: 'Deletes all annotations for a site' },
-          { name: 'Delete Annotation', value: 'annotationDeleteGet', action: 'Deletes annotation', description: 'Deletes an annotation by note ID' },
+          { name: 'Add Annotation', value: 'annotationAddPost', action: 'Adds annotation', description: 'Adds a new annotation for a given site and date' },
+          { name: 'Delete All Annotations', value: 'annotationAllDelete', action: 'Deletes all annotations', description: 'Deletes all annotations for a site' },
+          { name: 'Delete Annotation', value: 'annotationDelete', action: 'Deletes annotation', description: 'Deletes an annotation by note ID' },
           { name: 'Get All Annotations', value: 'annotationAllGet', action: 'Gets all annotations', description: 'Gets all annotations for a site and period' },
           { name: 'Get Annotation', value: 'annotationGet', action: 'Gets annotation', description: 'Gets a single annotation by note ID' },
           { name: 'Get Annotation Count For Dates', value: 'annotationCountForDatesGet', action: 'Gets annotation count for dates', description: 'Gets the number of annotations for each date in a range' },
-          { name: 'Save Annotation', value: 'annotationSaveGet', action: 'Saves annotation', description: 'Saves (updates) an existing annotation' }
+          { name: 'Save Annotation', value: 'annotationSavePost', action: 'Saves annotation', description: 'Saves (updates) an existing annotation' }
         ],
-        default: 'annotationAddGet',
+        default: 'annotationAddPost',
       },
 			{
 				displayName: 'Operation',
@@ -227,11 +227,11 @@ export class Matomo implements INodeType {
         noDataExpression: true,
         displayOptions: { show: { resource: ['connectAccount'] } },
         options: [
-          { name: 'Create Matomo Tag', value: 'connectAccountCreateMatomoTagGet', action: 'Creates matomo tag', description: 'Creates a matomo tag in the specified GTM container and workspace' },
+          { name: 'Create Matomo Tag', value: 'connectAccountCreateMatomoTagPost', action: 'Creates matomo tag', description: 'Creates a matomo tag in the specified GTM container and workspace' },
           { name: 'Get GTM Containers List', value: 'connectAccountGTMContainersListGet', action: 'Gets GTM containers list', description: 'Gets the list of Google Tag Manager containers for an account' },
           { name: 'Get GTM Workspace List', value: 'connectAccountGTMWorkspaceListGet', action: 'Gets GTM workspace list', description: 'Gets the list of GTM workspaces for a given container' }
         ],
-        default: 'connectAccountCreateMatomoTagGet',
+        default: 'connectAccountCreateMatomoTagPost',
       },
       {
         displayName: 'Operation',
@@ -252,11 +252,11 @@ export class Matomo implements INodeType {
         noDataExpression: true,
         displayOptions: { show: { resource: ['coreAdminHome'] } },
         options: [
-          { name: 'Delete All Tracking Failures', value: 'coreAdminHomeDeleteAllTrackingFailuresGet', action: 'Deletes all tracking failures', description: 'Deletes all tracking failures for all sites' },
-          { name: 'Delete Tracking Failure', value: 'coreAdminHomeDeleteTrackingFailureGet', action: 'Deletes tracking failure', description: 'Deletes a specific tracking failure for a given site' },
+          { name: 'Delete All Tracking Failures', value: 'coreAdminHomeAllTrackingFailuresDelete', action: 'Deletes all tracking failures', description: 'Deletes all tracking failures for all sites' },
+          { name: 'Delete Tracking Failure', value: 'coreAdminHomeTrackingFailureDelete', action: 'Deletes tracking failure', description: 'Deletes a specific tracking failure for a given site' },
           { name: 'Get Tracking Failures', value: 'coreAdminHomeTrackingFailuresGet', action: 'Gets tracking failures', description: 'Gets list of all tracking failures for a given site' }
         ],
-        default: 'coreAdminHomeDeleteAllTrackingFailuresGet',
+        default: 'coreAdminHomeAllTrackingFailuresDelete',
       },
       {
         displayName: 'Operation',
@@ -293,10 +293,10 @@ export class Matomo implements INodeType {
           { name: 'Get New Crashes', value: 'crashNewCrashesGet', action: 'Gets new crashes', description: 'Gets list of new crashes for a given site and period' },
           { name: 'Get Reappeared Crashes', value: 'crashReappearedCrashesGet', action: 'Gets reappeared crashes', description: 'Gets list of crashes that have reappeared for a given site and period' },
           { name: 'Get Unidentified Crash Messages', value: 'crashUnidentifiedCrashMessagesGet', action: 'Gets unidentified crash messages', description: 'Gets crash messages that are unidentified for a given site and period' },
-          { name: 'Merge Crashes', value: 'crashMergeCrashesGet', action: 'Merges crashes', description: 'Merges crash logs into one group' },
-          { name: 'Search Crash Messages For Merge', value: 'crashSearchCrashMessagesForMergeGet', action: 'Searches crash messages for merge', description: 'Searches crash messages for merge based on given search term and filters' },
-          { name: 'Set Ignore Crash', value: 'crashSetIgnoreCrashGet', action: 'Sets ignore crash', description: 'Sets whether a specific crash should be ignored' },
-          { name: 'Unmerge Crash Group', value: 'crashUnmergeCrashGroupGet', action: 'Unmerges crash group', description: 'Unmerges a previously merged crash group' }
+          { name: 'Merge Crashes', value: 'crashMergeCrashesPost', action: 'Merges crashes', description: 'Merges crash logs into one group' },
+          { name: 'Search Crash Messages For Merge', value: 'crashSearchCrashMessagesForMergePost', action: 'Searches crash messages for merge', description: 'Searches crash messages for merge based on given search term and filters' },
+          { name: 'Set Ignore Crash', value: 'crashSetIgnoreCrashPost', action: 'Sets ignore crash', description: 'Sets whether a specific crash should be ignored' },
+          { name: 'Unmerge Crash Group', value: 'crashUnmergeCrashGroupPost', action: 'Unmerges crash group', description: 'Unmerges a previously merged crash group' }
         ],
         default: 'crashAllCrashMessagesGet',
       },
@@ -307,15 +307,15 @@ export class Matomo implements INodeType {
         noDataExpression: true,
         displayOptions: { show: { resource: ['customAlert'] } },
         options: [
-          { name: 'Add Alert', value: 'customAlertAddGet', action: 'Adds alert', description: 'Adds a new alert with specified parameters (name, site, period, etc.)' },
-          { name: 'Delete Alert', value: 'customAlertDeleteGet', action: 'Deletes alert', description: 'Deletes a specific alert by its ID' },
-          { name: 'Edit Alert', value: 'customAlertEditGet', action: 'Edits alert', description: 'Edits an existing alert with updated parameters' },
-          { name: 'Get Alert', value: 'customAlertGetGet', action: 'Gets alert', description: 'Gets details for a specific alert by its ID' },
+          { name: 'Add Alert', value: 'customAlertAddPost', action: 'Adds alert', description: 'Adds a new alert with specified parameters (name, site, period, etc.)' },
+          { name: 'Delete Alert', value: 'customAlertDelete', action: 'Deletes alert', description: 'Deletes a specific alert by its ID' },
+          { name: 'Edit Alert', value: 'customAlertEditPost', action: 'Edits alert', description: 'Edits an existing alert with updated parameters' },
+          { name: 'Get Alert', value: 'customAlertGet', action: 'Gets alert', description: 'Gets details for a specific alert by its ID' },
           { name: 'Get Alerts', value: 'customAlertListGet', action: 'Gets alerts', description: 'Gets list of all alerts for given sites (or all if superuser)' },
           { name: 'Get Triggered Alerts', value: 'customAlertTriggeredGet', action: 'Gets triggered alerts', description: 'Gets list of triggered alerts for a given site' },
           { name: 'Get Values For Alert In Past', value: 'customAlertValuesForPastGet', action: 'Gets values for alert in past', description: 'Gets values for an alert in the past for a given alert and sub-period' }
         ],
-        default: 'customAlertAddGet',
+        default: 'customAlertAddPost',
       },
       {
         displayName: 'Operation',
@@ -324,15 +324,15 @@ export class Matomo implements INodeType {
         noDataExpression: true,
         displayOptions: { show: { resource: ['customDimension'] } },
         options: [
-          { name: 'Configure Existing Custom Dimension', value: 'customDimensionConfigureExistingGet', action: 'Configures existing custom dimension', description: 'Configures an existing custom dimension with updated settings' },
-          { name: 'Configure New Custom Dimension', value: 'customDimensionConfigureNewGet', action: 'Configures new custom dimension', description: 'Configures a new custom dimension with specified settings' },
+          { name: 'Configure Existing Custom Dimension', value: 'customDimensionConfigureExistingPost', action: 'Configures existing custom dimension', description: 'Configures an existing custom dimension with updated settings' },
+          { name: 'Configure New Custom Dimension', value: 'customDimensionConfigureNewPost', action: 'Configures new custom dimension', description: 'Configures a new custom dimension with specified settings' },
           { name: 'Get Available Extraction Dimensions', value: 'customDimensionAvailableExtractionGet', action: 'Gets available extraction dimensions', description: 'Gets available extraction dimensions for custom dimensions' },
           { name: 'Get Available Scopes', value: 'customDimensionAvailableScopesGet', action: 'Gets available scopes', description: 'Gets all available scopes for custom dimensions in a site' },
           { name: 'Get Configured Custom Dimensions', value: 'customDimensionConfiguredGet', action: 'Gets configured custom dimensions', description: 'Gets all configured custom dimensions for a site' },
           { name: 'Get Configured Custom Dimensions Having Scope', value: 'customDimensionConfiguredScopeGet', action: 'Gets configured custom dimensions having scope', description: 'Gets configured custom dimensions by scope for a site' },
           { name: 'Get Custom Dimension', value: 'customDimensionGetGet', action: 'Gets custom dimension', description: 'Gets a custom dimension report for a site and period' }
         ],
-        default: 'customDimensionConfigureExistingGet',
+        default: 'customDimensionConfigureExistingPost',
       },
       {
         displayName: 'Operation',
@@ -352,9 +352,9 @@ export class Matomo implements INodeType {
         noDataExpression: true,
         displayOptions: { show: { resource: ['customReport'] } },
         options: [
-          { name: 'Add Custom Report', value: 'customReportAddGet', action: 'Adds custom report', description: 'Adds a new custom report with specified metrics and dimensions' },
-          { name: 'Delete Custom Report', value: 'customReportDeleteGet', action: 'Deletes custom report', description: 'Deletes a specific custom report by ID for a site' },
-          { name: 'Duplicate Custom Report', value: 'customReportDuplicateGet', action: 'Duplicates custom report', description: 'Duplicates an existing custom report to specified sites' },
+          { name: 'Add Custom Report', value: 'customReportAddPost', action: 'Adds custom report', description: 'Adds a new custom report with specified metrics and dimensions' },
+          { name: 'Delete Custom Report', value: 'customReportDelete', action: 'Deletes custom report', description: 'Deletes a specific custom report by ID for a site' },
+          { name: 'Duplicate Custom Report', value: 'customReportDuplicatePost', action: 'Duplicates custom report', description: 'Duplicates an existing custom report to specified sites' },
           { name: 'Get Available Categories', value: 'customReportAvailableCategoriesGet', action: 'Gets available categories', description: 'Gets all available categories for custom reports' },
           { name: 'Get Available Dimensions', value: 'customReportAvailableDimensionsGet', action: 'Gets available dimensions', description: 'Gets all available dimensions for custom reports' },
           { name: 'Get Available Metrics', value: 'customReportAvailableMetricsGet', action: 'Gets available metrics', description: 'Gets all available metrics for custom reports' },
@@ -362,11 +362,11 @@ export class Matomo implements INodeType {
           { name: 'Get Configured Report', value: 'customReportConfiguredReportGet', action: 'Gets configured report', description: 'Gets a specific custom report by ID for a site' },
           { name: 'Get Configured Reports', value: 'customReportConfiguredReportsGet', action: 'Gets configured reports', description: 'Gets all configured custom reports for a site' },
           { name: 'Get Custom Report', value: 'customReportGet', action: 'Gets custom report', description: 'Gets custom report data for a specific site, period and report ID' },
-          { name: 'Pause Custom Report', value: 'customReportPauseGet', action: 'Pauses custom report', description: 'Pauses an active custom report for a site' },
-          { name: 'Resume Custom Report', value: 'customReportResumeGet', action: 'Resumes custom report', description: 'Resumes a paused custom report for a site' },
-          { name: 'Update Custom Report', value: 'customReportUpdateGet', action: 'Updates custom report', description: 'Updates an existing custom report with new parameters' }
+          { name: 'Pause Custom Report', value: 'customReportPausePost', action: 'Pauses custom report', description: 'Pauses an active custom report for a site' },
+          { name: 'Resume Custom Report', value: 'customReportResumePost', action: 'Resumes custom report', description: 'Resumes a paused custom report for a site' },
+          { name: 'Update Custom Report', value: 'customReportUpdatePost', action: 'Updates custom report', description: 'Updates an existing custom report with new parameters' }
         ],
-        default: 'customReportAddGet',
+        default: 'customReportAddPost',
       },
       {
         displayName: 'Operation',
@@ -388,11 +388,11 @@ export class Matomo implements INodeType {
         noDataExpression: true,
         displayOptions: { show: { resource: ['dashboard'] } },
         options: [
-          { name: 'Copy Dashboard To User', value: 'dashboardCopyToUserGet', action: 'Copies dashboard to user', description: 'Copies a dashboard to another user' },
-          { name: 'Create New Dashboard For User', value: 'dashboardCreateForUserGet', action: 'Creates new dashboard for user', description: 'Creates a new dashboard for a specified user' },
+          { name: 'Copy Dashboard To User', value: 'dashboardCopyToUserPost', action: 'Copies dashboard to user', description: 'Copies a dashboard to another user' },
+          { name: 'Create New Dashboard For User', value: 'dashboardCreateForUserPost', action: 'Creates new dashboard for user', description: 'Creates a new dashboard for a specified user' },
           { name: 'Get Dashboards', value: 'dashboardGet', action: 'Gets dashboards', description: 'Gets list of all dashboards for a user' },
-          { name: 'Remove Dashboard', value: 'dashboardRemoveGet', action: 'Removes dashboard', description: 'Removes a specific dashboard for a user' },
-          { name: 'Reset Dashboard Layout', value: 'dashboardResetLayoutGet', action: 'Resets dashboard layout', description: 'Resets the layout of a given dashboard for a user' }
+          { name: 'Remove Dashboard', value: 'dashboardRemovePost', action: 'Removes dashboard', description: 'Removes a specific dashboard for a user' },
+          { name: 'Reset Dashboard Layout', value: 'dashboardResetLayoutPost', action: 'Resets dashboard layout', description: 'Resets the layout of a given dashboard for a user' }
         ],
         default: 'dashboardGet',
       },
@@ -451,11 +451,11 @@ export class Matomo implements INodeType {
         noDataExpression: true,
         displayOptions: { show: { resource: ['feedback'] } },
         options: [
-          { name: 'Send Feedback For Feature', value: 'feedbackSendForFeatureGet', action: 'Sends feedback for feature', description: 'Sends user feedback for a specific feature' },
-          { name: 'Send Feedback For Survey', value: 'feedbackSendForSurveyGet', action: 'Sends feedback for survey', description: 'Sends user feedback for a specific survey question' },
-          { name: 'Update Feedback Reminder Date', value: 'feedbackUpdateReminderDateGet', action: 'Updates feedback reminder date', description: 'Updates the date for feedback reminders' },
+          { name: 'Send Feedback For Feature', value: 'feedbackSendForFeaturePost', action: 'Sends feedback for feature', description: 'Sends user feedback for a specific feature' },
+          { name: 'Send Feedback For Survey', value: 'feedbackSendForSurveyPost', action: 'Sends feedback for survey', description: 'Sends user feedback for a specific survey question' },
+          { name: 'Update Feedback Reminder Date', value: 'feedbackUpdateReminderDatePost', action: 'Updates feedback reminder date', description: 'Updates the date for feedback reminders' },
         ],
-        default: 'feedbackSendForFeatureGet',
+        default: 'feedbackSendForFeaturePost',
       },
       {
         displayName: 'Operation',
@@ -464,9 +464,9 @@ export class Matomo implements INodeType {
         noDataExpression: true,
         displayOptions: { show: { resource: ['form'] } },
         options: [
-          { name: 'Add Form', value: 'formAddGet', action: 'Adds form', description: 'Adds a new form for tracking with specified rules' },
-          { name: 'Archive Form', value: 'formArchiveGet', action: 'Archives form', description: 'Archives a form for future reference' },
-          { name: 'Delete Form', value: 'formDeleteGet', action: 'Deletes form', description: 'Deletes a form from tracking' },
+          { name: 'Add Form', value: 'formAddPost', action: 'Adds form', description: 'Adds a new form for tracking with specified rules' },
+          { name: 'Archive Form', value: 'formArchivePost', action: 'Archives form', description: 'Archives a form for future reference' },
+          { name: 'Delete Form', value: 'formDelete', action: 'Deletes form', description: 'Deletes a form from tracking' },
           { name: 'Get All Goals', value: 'formAllGoalsGet', action: 'Gets all goals', description: 'Gets all goal data associated with forms for a site' },
           { name: 'Get Auto Creation Settings', value: 'formAutoCreationSettingsGet', action: 'Gets auto creation settings', description: 'Gets settings for auto-creating forms for a site' },
           { name: 'Get Available Conversion Rule Options', value: 'formAvailableConversionRuleOptionsGet', action: 'Gets available conversion rule options', description: 'Gets all available conversion rule options for forms' },
@@ -487,8 +487,8 @@ export class Matomo implements INodeType {
           { name: 'Get Most Used Fields', value: 'formMostUsedFieldsGet', action: 'Gets most used fields', description: 'Gets fields that were most interacted with by users' },
           { name: 'Get Page URLs', value: 'formPageUrlsGet', action: 'Gets page urls', description: 'Gets URLs where the form was used' },
           { name: 'Get Uneeded Fields', value: 'formUneededFieldsGet', action: 'Gets uneeded fields', description: 'Gets fields that are often left blank by users' },
-          { name: 'Update Form', value: 'formUpdateGet', action: 'Updates form', description: 'Updates an existing form’s configuration and rules' },
-          { name: 'Update Form Field Display Name', value: 'formUpdateFieldDisplayNameGet', action: 'Updates form field display name', description: 'Updates the display name of form fields' },
+          { name: 'Update Form', value: 'formUpdatePost', action: 'Updates form', description: 'Updates an existing form’s configuration and rules' },
+          { name: 'Update Form Field Display Name', value: 'formUpdateFieldDisplayNamePost', action: 'Updates form field display name', description: 'Updates the display name of form fields' },
         ],
         default: 'formGet',
       },
@@ -499,8 +499,8 @@ export class Matomo implements INodeType {
         noDataExpression: true,
         displayOptions: { show: { resource: ['funnel'] } },
         options: [
-          { name: 'Delete Goal Funnel', value: 'funnelDeleteGoalFunnelGet', action: 'Deletes goal funnel', description: 'Deletes a goal-specific funnel for a site' },
-          { name: 'Delete Non Goal Funnel', value: 'funnelDeleteNonGoalFunnelGet', action: 'Deletes non goal funnel', description: 'Deletes a non goal funnel for a site' },
+          { name: 'Delete Goal Funnel', value: 'funnelGoalFunnelDelete', action: 'Deletes goal funnel', description: 'Deletes a goal-specific funnel for a site' },
+          { name: 'Delete Non Goal Funnel', value: 'funnelNonGoalFunnelDelete', action: 'Deletes non goal funnel', description: 'Deletes a non goal funnel for a site' },
           { name: 'Get All Activated Funnels For Site', value: 'funnelAllActivatedFunnelsForSiteGet', action: 'Gets all activated funnels for site', description: 'Gets all activated funnels for a site' },
           { name: 'Get Available Pattern Matches', value: 'funnelAvailablePatternMatchesGet', action: 'Gets available pattern matches', description: 'Gets available pattern matches for funnels' },
           { name: 'Get Funnel', value: 'funnelFunnelGet', action: 'Gets funnel', description: 'Gets detailed data for a specific funnel for a site' },
@@ -513,9 +513,9 @@ export class Matomo implements INodeType {
           { name: 'Get Metrics', value: 'funnelMetricsGet', action: 'Gets metrics', description: 'Gets metrics for a specific funnel and goal for a site and period' },
           { name: 'Get Sales Funnel For Site', value: 'funnelSalesFunnelForSiteGet', action: 'Gets sales funnel for site', description: 'Gets sales funnel data for a site' },
           { name: 'Has Any Activated Funnel For Site', value: 'funnelHasAnyActivatedFunnelForSiteGet', action: 'Checks activated funnels', description: 'Checks if there are any activated funnels for a site' },
-          { name: 'Save Non Goal Funnel', value: 'funnelSaveNonGoalFunnelGet', action: 'Saves non goal funnel', description: 'Saves a new non goal funnel for a site' },
-          { name: 'Set Goal Funnel', value: 'funnelSetGoalFunnelGet', action: 'Sets goal funnel', description: 'Sets up a new goal funnel with specified steps for a site' },
-          { name: 'Test Url Matches Steps', value: 'funnelTestUrlMatchesStepsGet', action: 'Tests URL matches steps', description: 'Tests if a URL matches the defined funnel steps' },
+          { name: 'Save Non Goal Funnel', value: 'funnelSaveNonGoalFunnelPost', action: 'Saves non goal funnel', description: 'Saves a new non goal funnel for a site' },
+          { name: 'Set Goal Funnel', value: 'funnelSetGoalFunnelPost', action: 'Sets goal funnel', description: 'Sets up a new goal funnel with specified steps for a site' },
+          { name: 'Test Url Matches Steps', value: 'funnelTestUrlMatchesStepsPost', action: 'Tests URL matches steps', description: 'Tests if a URL matches the defined funnel steps' },
         ],
         default: 'funnelFunnelGet',
       },
@@ -526,8 +526,8 @@ export class Matomo implements INodeType {
         noDataExpression: true,
         displayOptions: { show: { resource: ['goal'] } },
         options: [
-          { name: 'Add Goal', value: 'goalAddGet', action: 'Adds goal', description: 'Adds a new goal with specified settings for a site' },
-          { name: 'Delete Goal', value: 'goalDeleteGet', action: 'Deletes goal', description: 'Deletes a specific goal from a site' },
+          { name: 'Add Goal', value: 'goalAddPost', action: 'Adds goal', description: 'Adds a new goal with specified settings for a site' },
+          { name: 'Delete Goal', value: 'goalDelete', action: 'Deletes goal', description: 'Deletes a specific goal from a site' },
           { name: 'Get Days To Conversion', value: 'goalDaysToConversionGet', action: 'Gets days to conversion', description: 'Gets number of days to conversion for a goal' },
           { name: 'Get Goal', value: 'goalGoalGet', action: 'Gets goal', description: 'Gets details for a specific goal for a site' },
           { name: 'Get Goal Metrics', value: 'goelMetricsGet', action: 'Gets goal metrics', description: 'Gets goal-specific metrics for a site and period' },
@@ -536,7 +536,7 @@ export class Matomo implements INodeType {
           { name: 'Get Items Name', value: 'goalItemsNameGet', action: 'Gets items name', description: 'Gets product data by name for a site and period' },
           { name: 'Get Items Sku', value: 'goalItemsSkuGet', action: 'Gets items SKU', description: 'Gets product data by SKU for a site and period' },
           { name: 'Get Visits Until Conversion', value: 'goalVisitsUntilConversionGet', action: 'Gets visits until conversion', description: 'Gets number of visits until conversion for a goal' },
-          { name: 'Update Goal', value: 'goalUpdateGet', action: 'Updates goal', description: 'Updates an existing goal with new settings for a site' },
+          { name: 'Update Goal', value: 'goalUpdatePost', action: 'Updates goal', description: 'Updates an existing goal with new settings for a site' },
         ],
         default: 'goelMetricsGet',
       },
@@ -547,16 +547,16 @@ export class Matomo implements INodeType {
         noDataExpression: true,
         displayOptions: { show: { resource: ['heatmapSessionRecording'] } },
         options: [
-          { name: 'Add Heatmap', value: 'heatmapSessionRecordingAddHeatmapGet', action: 'Adds heatmap', description: 'Adds a new heatmap for tracking with specified rules' },
-          { name: 'Add Session Recording', value: 'heatmapSessionRecordingAddSessionRecordingGet', action: 'Adds session recording', description: 'Adds a new session recording with specified rules' },
-          { name: 'Delete Heatmap', value: 'heatmapSessionRecordingDeleteHeatmapGet', action: 'Deletes heatmap', description: 'Deletes a heatmap for a site' },
-          { name: 'Delete Heatmap Screenshot', value: 'heatmapSessionRecordingDeleteHeatmapScreenshotGet', action: 'Deletes heatmap screenshot', description: 'Deletes a heatmap screenshot for a site' },
-          { name: 'Delete Recorded Pageview', value: 'heatmapSessionRecordingDeleteRecordedPageviewGet', action: 'Deletes recorded pageview', description: 'Deletes a recorded pageview for a site' },
-          { name: 'Delete Recorded Session', value: 'heatmapSessionRecordingDeleteRecordedSessionGet', action: 'Deletes recorded session', description: 'Deletes a recorded session for a site' },
-          { name: 'Delete Session Recording', value: 'heatmapSessionRecordingDeleteSessionRecordingGet', action: 'Deletes session recording', description: 'Deletes a session recording for a site' },
-          { name: 'Duplicate Heatmap', value: 'heatmapSessionRecordingDuplicateHeatmapGet', action: 'Duplicates heatmap', description: 'Duplicates an existing heatmap for other sites' },
-          { name: 'End Heatmap', value: 'heatmapSessionRecordingEndHeatmapGet', action: 'Ends heatmap', description: 'Ends and finalizes a heatmap for a site' },
-          { name: 'End Session Recording', value: 'heatmapSessionRecordingEndSessionRecordingGet', action: 'Ends session recording', description: 'Ends and finalizes a session recording for a site' },
+          { name: 'Add Heatmap', value: 'heatmapSessionRecordingAddHeatmaPost', action: 'Adds heatmap', description: 'Adds a new heatmap for tracking with specified rules' },
+          { name: 'Add Session Recording', value: 'heatmapSessionRecordingAddSessionRecordingPost', action: 'Adds session recording', description: 'Adds a new session recording with specified rules' },
+          { name: 'Delete Heatmap', value: 'heatmapSessionRecordingHeatmapDelete', action: 'Deletes heatmap', description: 'Deletes a heatmap for a site' },
+          { name: 'Delete Heatmap Screenshot', value: 'heatmapSessionRecordingHeatmapScreenshotDelete', action: 'Deletes heatmap screenshot', description: 'Deletes a heatmap screenshot for a site' },
+          { name: 'Delete Recorded Pageview', value: 'heatmapSessionRecordingRecordedPageviewDelete', action: 'Deletes recorded pageview', description: 'Deletes a recorded pageview for a site' },
+          { name: 'Delete Recorded Session', value: 'heatmapSessionRecordingRecordedSessionDelete', action: 'Deletes recorded session', description: 'Deletes a recorded session for a site' },
+          { name: 'Delete Session Recording', value: 'heatmapSessionRecordingSessionRecordingDelete', action: 'Deletes session recording', description: 'Deletes a session recording for a site' },
+          { name: 'Duplicate Heatmap', value: 'heatmapSessionRecordingDuplicateHeatmapPost', action: 'Duplicates heatmap', description: 'Duplicates an existing heatmap for other sites' },
+          { name: 'End Heatmap', value: 'heatmapSessionRecordingEndHeatmapPost', action: 'Ends heatmap', description: 'Ends and finalizes a heatmap for a site' },
+          { name: 'End Session Recording', value: 'heatmapSessionRecordingEndSessionRecordingPost', action: 'Ends session recording', description: 'Ends and finalizes a session recording for a site' },
           { name: 'Get Available Device Types', value: 'heatmapSessionRecordingAvailableDeviceTypesGet', action: 'Gets available device types', description: 'Gets available device types for heatmap and session recordings' },
           { name: 'Get Available Heatmap Types', value: 'heatmapSessionRecordingAvailableHeatmapTypesGet', action: 'Gets available heatmap types', description: 'Gets available heatmap types for session recordings' },
           { name: 'Get Available Session Recording Sample Limits', value: 'heatmapSessionRecordingAvailableSessionRecordingSampleLimitsGet', action: 'Gets available sample limits', description: 'Gets available sample limits for session recordings' },
@@ -572,15 +572,15 @@ export class Matomo implements INodeType {
           { name: 'Get Recorded Sessions', value: 'heatmapSessionRecordingRecordedSessionsGet', action: 'Gets recorded sessions', description: 'Gets detailed data for recorded sessions for a site' },
           { name: 'Get Session Recording', value: 'heatmapSessionRecordingSessionRecordingGet', action: 'Gets session recording', description: 'Gets a session recording by ID for a site' },
           { name: 'Get Session Recordings', value: 'heatmapSessionRecordingSessionRecordingsGet', action: 'Gets session recordings', description: 'Gets all available session recordings for a site' },
-          { name: 'Pause Heatmap', value: 'heatmapSessionRecordingPauseHeatmapGet', action: 'Pauses heatmap', description: 'Pauses a heatmap for a site' },
-          { name: 'Pause Session Recording', value: 'heatmapSessionRecordingPauseSessionRecordingGet', action: 'Pauses session recording', description: 'Pauses a session recording for a site' },
-          { name: 'Resume Heatmap', value: 'heatmapSessionRecordingResumeHeatmapGet', action: 'Resumes heatmap', description: 'Resumes a paused heatmap for a site' },
-          { name: 'Resume Session Recording', value: 'heatmapSessionRecordingResumeSessionRecordingGet', action: 'Resumes session recording', description: 'Resumes a paused session recording for a site' },
-          { name: 'Test Url Match Pages', value: 'heatmapSessionRecordingTestUrlMatchPagesGet', action: 'Tests URL match pages', description: 'Tests if a URL matches the defined rules for a heatmap' },
-          { name: 'Update Heatmap', value: 'heatmapSessionRecordingUpdateHeatmapGet', action: 'Updates heatmap', description: 'Updates settings for an existing heatmap' },
-          { name: 'Update Session Recording', value: 'heatmapSessionRecordingUpdateSessionRecordingGet', action: 'Updates session recording', description: 'Updates settings for an existing session recording' },
+          { name: 'Pause Heatmap', value: 'heatmapSessionRecordingPauseHeatmapPost', action: 'Pauses heatmap', description: 'Pauses a heatmap for a site' },
+          { name: 'Pause Session Recording', value: 'heatmapSessionRecordingPauseSessionRecordingPost', action: 'Pauses session recording', description: 'Pauses a session recording for a site' },
+          { name: 'Resume Heatmap', value: 'heatmapSessionRecordingResumeHeatmapPost', action: 'Resumes heatmap', description: 'Resumes a paused heatmap for a site' },
+          { name: 'Resume Session Recording', value: 'heatmapSessionRecordingResumeSessionRecordingPost', action: 'Resumes session recording', description: 'Resumes a paused session recording for a site' },
+          { name: 'Test Url Match Pages', value: 'heatmapSessionRecordingTestUrlMatchPagesPost', action: 'Tests URL match pages', description: 'Tests if a URL matches the defined rules for a heatmap' },
+          { name: 'Update Heatmap', value: 'heatmapSessionRecordingUpdateHeatmapPost', action: 'Updates heatmap', description: 'Updates settings for an existing heatmap' },
+          { name: 'Update Session Recording', value: 'heatmapSessionRecordingUpdateSessionRecordingPost', action: 'Updates session recording', description: 'Updates settings for an existing session recording' },
         ],
-        default: 'heatmapSessionRecordingAddHeatmapGet',
+        default: 'heatmapSessionRecordingAddHeatmaPost',
       },
       {
         displayName: 'Operation',
@@ -621,9 +621,9 @@ export class Matomo implements INodeType {
           { name: 'Get Language For User', value: 'languagesManagerLanguageForUserGet', action: 'Gets language for user', description: 'Gets the language preference for a specific user' },
           { name: 'Get Translations For Language', value: 'languagesManagerTranslationsForLanguageGet', action: 'Gets translations for language', description: 'Gets all translation strings for a given language' },
           { name: 'Is Language Available', value: 'languagesManagerIsLanguageAvailableGet', action: 'Checks language availability', description: 'Checks if a specified language is available in Matomo' },
-          { name: 'Set 12 Hour Clock For User', value: 'languagesManagerSet12HourClockForUserGet', action: 'Sets 12 hour clock for user', description: 'Sets the 12 hour clock format for a user' },
-          { name: 'Set Language For User', value: 'languagesManagerSetLanguageForUserGet', action: 'Sets language for user', description: 'Sets the language preference for a specific user' },
-          { name: 'Uses 12 Hour Clock For User', value: 'languagesManagerUses12HourClockForUserGet', action: 'Checks if 12 hour clock is used', description: 'Checks if a user is using the 12 hour clock format' }
+          { name: 'Set 12 Hour Clock For User', value: 'languagesManagerSet12HourClockForUserPost', action: 'Sets 12 hour clock for user', description: 'Sets the 12 hour clock format for a user' },
+          { name: 'Set Language For User', value: 'languagesManagerSetLanguageForUserPost', action: 'Sets language for user', description: 'Sets the language preference for a specific user' },
+          { name: 'Uses 12 Hour Clock For User', value: 'languagesManagerUses12HourClockForUserPost', action: 'Checks if 12 hour clock is used', description: 'Checks if a user is using the 12 hour clock format' }
         ],
         default: 'languagesManagerAvailableLanguageNamesGet',
       },
@@ -650,9 +650,9 @@ export class Matomo implements INodeType {
         noDataExpression: true,
         displayOptions: { show: { resource: ['login'] } },
         options: [
-          { name: 'Unblock Brute Force IPs', value: 'loginUnblockBruteForceIPsGet', action: 'Unblocks brute force ips', description: 'Unblocks ips that were blocked due to brute force attempts' }
+          { name: 'Unblock Brute Force IPs', value: 'loginUnblockBruteForceIPsPost', action: 'Unblocks brute force ips', description: 'Unblocks ips that were blocked due to brute force attempts' }
         ],
-        default: 'loginUnblockBruteForceIPsGet',
+        default: 'loginUnblockBruteForceIPsPost',
       },
       {
         displayName: 'Operation',
@@ -707,20 +707,20 @@ export class Matomo implements INodeType {
         noDataExpression: true,
         displayOptions: { show: { resource: ['mobileMessaging'] } },
         options: [
-          { name: 'Add Phone Number', value: 'mobileMessagingAddPhoneNumberGet', action: 'Adds phone number', description: 'Adds a phone number for SMS sending' },
-          { name: 'Are SMS API Credentials Provided', value: 'mobileMessagingAreSmsApiCredentialsProvidedGet', action: 'Checks SMS API credentials', description: 'Checks if the SMS API credentials are available for a site' },
-          { name: 'Delete SMS API Credential', value: 'mobileMessagingDeleteSmsApiCredentialGet', action: 'Deletes SMS API credential', description: 'Deletes the SMS API credential for the provider' },
+          { name: 'Add Phone Number', value: 'mobileMessagingAddPhoneNumberPost', action: 'Adds phone number', description: 'Adds a phone number for SMS sending' },
+          { name: 'Are SMS API Credentials Provided', value: 'mobileMessagingAreSmsApiCredentialsProvidedPost', action: 'Checks SMS API credentials', description: 'Checks if the SMS API credentials are available for a site' },
+          { name: 'Delete SMS API Credential', value: 'mobileMessagingSmsApiCredentialDelete', action: 'Deletes SMS API credential', description: 'Deletes the SMS API credential for the provider' },
           { name: 'Get Credit Left', value: 'mobileMessagingCreditLeftGet', action: 'Gets SMS credit left', description: 'Gets the remaining credit for SMS usage' },
           { name: 'Get Delegated Management', value: 'mobileMessagingDelegatedManagementGet', action: 'Gets delegated management', description: 'Gets the current delegated management status for SMS service' },
           { name: 'Get Phone Numbers', value: 'mobileMessagingPhoneNumbersGet', action: 'Gets phone numbers', description: 'Gets all phone numbers registered for SMS sending' },
           { name: 'Get SMS Provider', value: 'mobileMessagingSmsProviderGet', action: 'Gets SMS provider', description: 'Gets the SMS provider for the current site' },
-          { name: 'Remove Phone Number', value: 'mobileMessagingRemovePhoneNumberGet', action: 'Removes phone number', description: 'Removes a phone number from the system' },
-          { name: 'Resend Verification Code', value: 'mobileMessagingResendVerificationCodeGet', action: 'Resends verification code', description: 'Resends the verification code for a phone number' },
-          { name: 'Set Delegated Management', value: 'mobileMessagingSetDelegatedManagementGet', action: 'Sets delegated management', description: 'Sets the delegated management option for SMS service' },
-          { name: 'Set SMS API Credential', value: 'mobileMessagingSetSmsApiCredentialGet', action: 'Sets SMS API credentials', description: 'Sets SMS API credentials for a specified provider' },
-          { name: 'Validate Phone Number', value: 'mobileMessagingValidatePhoneNumberGet', action: 'Validates phone number', description: 'Validates a phone number using a verification code' },
+          { name: 'Remove Phone Number', value: 'mobileMessagingRemovePhoneNumberPost', action: 'Removes phone number', description: 'Removes a phone number from the system' },
+          { name: 'Resend Verification Code', value: 'mobileMessagingResendVerificationCodePost', action: 'Resends verification code', description: 'Resends the verification code for a phone number' },
+          { name: 'Set Delegated Management', value: 'mobileMessagingSetDelegatedManagementPost', action: 'Sets delegated management', description: 'Sets the delegated management option for SMS service' },
+          { name: 'Set SMS API Credential', value: 'mobileMessagingSetSmsApiCredentialPost', action: 'Sets SMS API credentials', description: 'Sets SMS API credentials for a specified provider' },
+          { name: 'Validate Phone Number', value: 'mobileMessagingValidatePhoneNumberPost', action: 'Validates phone number', description: 'Validates a phone number using a verification code' },
         ],
-        default: 'mobileMessagingAddPhoneNumberGet',
+        default: 'mobileMessagingAddPhoneNumberPost',
       },
       {
         displayName: 'Operation',
@@ -733,7 +733,7 @@ export class Matomo implements INodeType {
           { name: 'Get Channel Attribution', value: 'multiChannelConversionAttributionChannelAttributionGet', action: 'Gets channel attribution', description: 'Gets channel attribution data for a site and period' },
           { name: 'Get Goal Attribution', value: 'multiChannelConversionAttributionGoalAttributionGet', action: 'Gets goal attribution', description: 'Gets the attribution model for a specific goal' },
           { name: 'Get Site Attribution Goals', value: 'multiChannelConversionAttributionSiteAttributionGoalsGet', action: 'Gets site attribution goals', description: 'Gets the attribution goals for a site' },
-          { name: 'Set Goal Attribution', value: 'multiChannelConversionAttributionSetGoalAttributionGet', action: 'Sets goal attribution', description: 'Sets the attribution model for a specific goal' },
+          { name: 'Set Goal Attribution', value: 'multiChannelConversionAttributionSetGoalAttributionPost', action: 'Sets goal attribution', description: 'Sets the attribution model for a specific goal' },
         ],
         default: 'multiChannelConversionAttributionAvailableCampaignDimensionCombinationsGet',
       },     
@@ -780,14 +780,14 @@ export class Matomo implements INodeType {
         noDataExpression: true,
         displayOptions: { show: { resource: ['privacyManager'] } },
         options: [
-          { name: 'Anonymize Some Raw Data', value: 'privacyManagerAnonymizeSomeRawDataGet', action: 'Anonymizes raw data', description: 'Anonymizes specific raw data for a site' },
-          { name: 'Delete Data Subjects', value: 'privacyManagerDeleteDataSubjectsGet', action: 'Deletes data subjects', description: 'Deletes user data for specified visits' },
-          { name: 'Export Data Subjects', value: 'privacyManagerExportDataSubjectsGet', action: 'Exports data subjects', description: 'Exports user data for specified visits' },
-          { name: 'Find Data Subjects', value: 'privacyManagerFindDataSubjectsGet', action: 'Finds data subjects', description: 'Finds specific user data subjects for a site' },
+          { name: 'Anonymize Some Raw Data', value: 'privacyManagerAnonymizeSomeRawDataPost', action: 'Anonymizes raw data', description: 'Anonymizes specific raw data for a site' },
+          { name: 'Delete Data Subjects', value: 'privacyManagerDataSubjectsDelete', action: 'Deletes data subjects', description: 'Deletes user data for specified visits' },
+          { name: 'Export Data Subjects', value: 'privacyManagerExportDataSubjectsPost', action: 'Exports data subjects', description: 'Exports user data for specified visits' },
+          { name: 'Find Data Subjects', value: 'privacyManagerFindDataSubjectsPost', action: 'Finds data subjects', description: 'Finds specific user data subjects for a site' },
           { name: 'Get Available Link Visit Action Columns To Anonymize', value: 'privacyManagerAvailableLinkVisitActionColumnsToAnonymizeGet', action: 'Gets available link visit action columns', description: 'Gets columns related to visit actions available for anonymization' },
           { name: 'Get Available Visit Columns To Anonymize', value: 'privacyManagerAvailableVisitColumnsToAnonymizeGet', action: 'Gets available visit columns', description: 'Gets columns available for anonymization' },
         ],
-        default: 'privacyManagerAnonymizeSomeRawDataGet',
+        default: 'privacyManagerAnonymizeSomeRawDataPost',
       },
       {
         displayName: 'Operation',
@@ -840,11 +840,11 @@ export class Matomo implements INodeType {
         noDataExpression: true,
         displayOptions: { show: { resource: ['rollUpReporting'] } },
         options: [
-          { name: 'Add Roll Up', value: 'rollUpReportingAddRollUpGet', action: 'Adds roll up', description: 'Adds a new roll up configuration for a site' },
-          { name: 'Get Roll Ups', value: 'rollUpReportingRollUpsGet', action: 'Gets roll ups', description: 'Gets list of all roll up configurations for a site' },
-          { name: 'Update Roll Up', value: 'rollUpReportingUpdateRollUpGet', action: 'Updates roll up', description: 'Updates an existing roll up configuration for a site' },
+          { name: 'Add Roll Up', value: 'rollUpReportingAddRollUpPost', action: 'Adds roll up', description: 'Adds a new roll up configuration for a site' },
+          { name: 'Get Roll Ups', value: 'rollUpReportingRollUpsPost', action: 'Gets roll ups', description: 'Gets list of all roll up configurations for a site' },
+          { name: 'Update Roll Up', value: 'rollUpReportingUpdateRollUpPost', action: 'Updates roll up', description: 'Updates an existing roll up configuration for a site' },
         ],
-        default: 'rollUpReportingAddRollUpGet',
+        default: 'rollUpReportingAddRollUpPost',
       },
       {
         displayName: 'Operation',
@@ -853,14 +853,14 @@ export class Matomo implements INodeType {
         noDataExpression: true,
         displayOptions: { show: { resource: ['scheduledReport'] } },
         options: [
-          { name: 'Add Report', value: 'scheduledReportAddReportGet', action: 'Adds scheduled report', description: 'Adds a new scheduled email report for a site' },
-          { name: 'Delete Report', value: 'scheduledReportDeleteReportGet', action: 'Deletes scheduled report', description: 'Deletes a specific scheduled email report' },
-          { name: 'Generate Report', value: 'scheduledReportGenerateReportGet', action: 'Generates scheduled report', description: 'Generates a report for a specific date range' },
+          { name: 'Add Report', value: 'scheduledReportAddReportPost', action: 'Adds scheduled report', description: 'Adds a new scheduled email report for a site' },
+          { name: 'Delete Report', value: 'scheduledReportReportDelete', action: 'Deletes scheduled report', description: 'Deletes a specific scheduled email report' },
+          { name: 'Generate Report', value: 'scheduledReportGenerateReportPost', action: 'Generates scheduled report', description: 'Generates a report for a specific date range' },
           { name: 'Get Reports', value: 'scheduledReportReportsGet', action: 'Gets scheduled reports', description: 'Gets list of all scheduled reports for a site' },
-          { name: 'Send Report', value: 'scheduledReportSendReportGet', action: 'Sends scheduled report', description: 'Sends a report via email to specified recipients' },
-          { name: 'Update Report', value: 'scheduledReportUpdateReportGet', action: 'Updates scheduled report', description: 'Updates an existing scheduled email report' },
+          { name: 'Send Report', value: 'scheduledReportSendReportPost', action: 'Sends scheduled report', description: 'Sends a report via email to specified recipients' },
+          { name: 'Update Report', value: 'scheduledReportUpdateReportPost', action: 'Updates scheduled report', description: 'Updates an existing scheduled email report' },
         ],
-        default: 'scheduledReportAddReportGet',
+        default: 'scheduledReportAddReportPost',
       },
       {
         displayName: 'Operation',
@@ -891,14 +891,14 @@ export class Matomo implements INodeType {
         noDataExpression: true,
         displayOptions: { show: { resource: ['segmentEditor'] } },
         options: [
-          { name: 'Add Segment', value: 'segmentEditorAddSegmentGet', action: 'Adds segment', description: 'Adds a new segment with specified definition' },
-          { name: 'Delete Segment', value: 'segmentEditorDeleteSegmentGet', action: 'Deletes segment', description: 'Deletes a specific segment by ID' },
+          { name: 'Add Segment', value: 'segmentEditorAddSegmentPost', action: 'Adds segment', description: 'Adds a new segment with specified definition' },
+          { name: 'Delete Segment', value: 'segmentEditorSegmentDelete', action: 'Deletes segment', description: 'Deletes a specific segment by ID' },
           { name: 'Get All Segments', value: 'segmentEditorAllSegmentsGet', action: 'Gets all segments', description: 'Gets list of all saved segments for a site' },
           { name: 'Get Segment', value: 'segmentEditorSegmentGet', action: 'Gets segment', description: 'Gets details for a specific segment by ID' },
           { name: 'Is User Can Add New Segment', value: 'segmentEditorUserCanAddNewSegmentGet', action: 'Checks if user can add segment', description: 'Checks if the user has permission to add new segments' },
-          { name: 'Update Segment', value: 'segmentEditorUpdateSegmentGet', action: 'Updates segment', description: 'Updates an existing segment with new data' },
+          { name: 'Update Segment', value: 'segmentEditorUpdateSegmentPost', action: 'Updates segment', description: 'Updates an existing segment with new data' },
         ],
-        default: 'segmentEditorAddSegmentGet',
+        default: 'segmentEditorAddSegmentPost',
       },
       {
         displayName: 'Operation',
@@ -918,9 +918,9 @@ export class Matomo implements INodeType {
         noDataExpression: true,
         displayOptions: { show: { resource: ['sitesManager'] } },
         options: [
-          { name: 'Add Site', value: 'sitesManagerAddSiteGet', action: 'Adds site', description: 'Adds a new site to Matomo' },
-          { name: 'Add Site Alias Urls', value: 'sitesManagerAddSiteAliasUrlsGet', action: 'Adds site alias urls', description: 'Adds alias URLs for a specific site' },
-          { name: 'Delete Site', value: 'sitesManagerDeleteSiteGet', action: 'Deletes site', description: 'Deletes a specific site from Matomo' },
+          { name: 'Add Site', value: 'sitesManagerAddSitePost', action: 'Adds site', description: 'Adds a new site to Matomo' },
+          { name: 'Add Site Alias Urls', value: 'sitesManagerAddSiteAliasUrlsPost', action: 'Adds site alias urls', description: 'Adds alias URLs for a specific site' },
+          { name: 'Delete Site', value: 'sitesManagerSiteDelete', action: 'Deletes site', description: 'Deletes a specific site from Matomo' },
           { name: 'Get All Sites', value: 'sitesManagerGetAllSitesGet', action: 'Gets all sites', description: 'Gets all sites in Matomo' },
           { name: 'Get All Sites ID', value: 'sitesManagerGetAllSitesIdGet', action: 'Gets all sites ids', description: 'Gets the list of all site IDs in Matomo' },
           { name: 'Get Currency List', value: 'sitesManagerGetCurrencyListGet', action: 'Gets currency list', description: 'Gets the list of currencies available in Matomo' },
@@ -960,19 +960,19 @@ export class Matomo implements INodeType {
           { name: 'Get Timezones List', value: 'sitesManagerGetTimezonesListGet', action: 'Gets timezones list', description: 'Gets the list of timezones available in Matomo' },
           { name: 'Get Unique Site Timezones', value: 'sitesManagerGetUniqueSiteTimezonesGet', action: 'Gets unique site timezones', description: 'Gets unique timezones used by the sites' },
           { name: 'Is Timezone Support Enabled', value: 'sitesManagerIsTimezoneSupportEnabledGet', action: 'Checks if timezone support is enabled', description: 'Checks if timezone support is enabled in Matomo' },
-          { name: 'Rename Group', value: 'sitesManagerRenameGroupGet', action: 'Renames group', description: 'Renames a specific site group' },
-          { name: 'Set Default Currency', value: 'sitesManagerSetDefaultCurrencyGet', action: 'Sets default currency', description: 'Sets the default currency for all sites' },
-          { name: 'Set Default Timezone', value: 'sitesManagerSetDefaultTimezoneGet', action: 'Sets default timezone', description: 'Sets the default timezone for all sites' },
-          { name: 'Set Global Excluded IPs', value: 'sitesManagerSetGlobalExcludedIpsGet', action: 'Sets global excluded ips', description: 'Sets IPs to be excluded from all sites' },
-          { name: 'Set Global Excluded Referrers', value: 'sitesManagerSetGlobalExcludedReferrersGet', action: 'Sets global excluded referrers', description: 'Sets referrers to be excluded from all sites' },
-          { name: 'Set Global Excluded User Agents', value: 'sitesManagerSetGlobalExcludedUserAgentsGet', action: 'Sets global excluded user agents', description: 'Sets user agents to be excluded from all sites' },
-          { name: 'Set Global Query Param Exclusion', value: 'sitesManagerSetGlobalQueryParamExclusionGet', action: 'Sets global query param exclusion', description: 'Sets global query parameter exclusions' },
-          { name: 'Set Global Search Parameters', value: 'sitesManagerSetGlobalSearchParametersGet', action: 'Sets global search parameters', description: 'Sets the global search parameters for all sites' },
-          { name: 'Set Keep URL Fragments Global', value: 'sitesManagerSetKeepUrlFragmentsGlobalGet', action: 'Sets keep URL fragments global', description: 'Sets the URL fragment setting globally' },
-          { name: 'Set Site Alias URLs', value: 'sitesManagerSetSiteAliasUrlsGet', action: 'Sets site alias urls', description: 'Sets the alias URLs for a specific site' },
-          { name: 'Update Site', value: 'sitesManagerUpdateSiteGet', action: 'Updates site', description: 'Updates the settings for a specific site' },
+          { name: 'Rename Group', value: 'sitesManagerRenameGroupPost', action: 'Renames group', description: 'Renames a specific site group' },
+          { name: 'Set Default Currency', value: 'sitesManagerSetDefaultCurrencyPost', action: 'Sets default currency', description: 'Sets the default currency for all sites' },
+          { name: 'Set Default Timezone', value: 'sitesManagerSetDefaultTimezonePost', action: 'Sets default timezone', description: 'Sets the default timezone for all sites' },
+          { name: 'Set Global Excluded IPs', value: 'sitesManagerSetGlobalExcludedIpsPost', action: 'Sets global excluded ips', description: 'Sets IPs to be excluded from all sites' },
+          { name: 'Set Global Excluded Referrers', value: 'sitesManagerSetGlobalExcludedReferrersPost', action: 'Sets global excluded referrers', description: 'Sets referrers to be excluded from all sites' },
+          { name: 'Set Global Excluded User Agents', value: 'sitesManagerSetGlobalExcludedUserAgentsPost', action: 'Sets global excluded user agents', description: 'Sets user agents to be excluded from all sites' },
+          { name: 'Set Global Query Param Exclusion', value: 'sitesManagerSetGlobalQueryParamExclusionPost', action: 'Sets global query param exclusion', description: 'Sets global query parameter exclusions' },
+          { name: 'Set Global Search Parameters', value: 'sitesManagerSetGlobalSearchParametersPost', action: 'Sets global search parameters', description: 'Sets the global search parameters for all sites' },
+          { name: 'Set Keep URL Fragments Global', value: 'sitesManagerSetKeepUrlFragmentsGlobalPost', action: 'Sets keep URL fragments global', description: 'Sets the URL fragment setting globally' },
+          { name: 'Set Site Alias URLs', value: 'sitesManagerSetSiteAliasUrlsPost', action: 'Sets site alias urls', description: 'Sets the alias URLs for a specific site' },
+          { name: 'Update Site', value: 'sitesManagerUpdateSitePost', action: 'Updates site', description: 'Updates the settings for a specific site' },
         ],
-        default: 'sitesManagerAddSiteGet',
+        default: 'sitesManagerAddSitePost',
       },
       {
         displayName: 'Operation',
@@ -981,21 +981,21 @@ export class Matomo implements INodeType {
         noDataExpression: true,
         displayOptions: { show: { resource: ['tagManager'] } },
         options: [
-          { name: 'Add Container', value: 'tagManagerAddContainerGet', action: 'Adds container', description: 'Adds a new container to a site' },
-          { name: 'Add Container Tag', value: 'tagManagerAddContainerTagGet', action: 'Adds container tag', description: 'Adds a new tag to a container for a site' },
-          { name: 'Add Container Trigger', value: 'tagManagerAddContainerTriggerGet', action: 'Adds container trigger', description: 'Adds a new trigger to a container for a site' },
-          { name: 'Add Container Variable', value: 'tagManagerAddContainerVariableGet', action: 'Adds container variable', description: 'Adds a new variable to a container for a site' },
-          { name: 'Change Debug Url', value: 'tagManagerChangeDebugUrlGet', action: 'Changes debug URL', description: 'Changes the debug URL for a container for a site' },
-          { name: 'Create Container Version', value: 'tagManagerCreateContainerVersionGet', action: 'Creates container version', description: 'Creates a new version of a container for a site' },
-          { name: 'Create Default Container For Site', value: 'tagManagerCreateDefaultContainerForSiteGet', action: 'Creates default container for site', description: 'Creates a default container for a site' },
-          { name: 'Delete Container', value: 'tagManagerDeleteContainerGet', action: 'Deletes container', description: 'Deletes a container from a site' },
-          { name: 'Delete Container Tag', value: 'tagManagerDeleteContainerTagGet', action: 'Deletes container tag', description: 'Deletes a tag from a container for a site' },
-          { name: 'Delete Container Trigger', value: 'tagManagerDeleteContainerTriggerGet', action: 'Deletes container trigger', description: 'Deletes a trigger from a container for a site' },
-          { name: 'Delete Container Variable', value: 'tagManagerDeleteContainerVariableGet', action: 'Deletes container variable', description: 'Deletes a variable from a container for a site' },
-          { name: 'Delete Container Version', value: 'tagManagerDeleteContainerVersionGet', action: 'Deletes container version', description: 'Deletes a specific container version for a site' },
-          { name: 'Disable Preview Mode', value: 'tagManagerDisablePreviewModeGet', action: 'Disables preview mode', description: 'Disables preview mode for a container for a site' },
-          { name: 'Enable Preview Mode', value: 'tagManagerEnablePreviewModeGet', action: 'Enables preview mode', description: 'Enables preview mode for a container for a site' },
-          { name: 'Export Container Version', value: 'tagManagerExportContainerVersionGet', action: 'Exports container version', description: 'Exports a specific container version' },
+          { name: 'Add Container', value: 'tagManagerAddContainerPost', action: 'Adds container', description: 'Adds a new container to a site' },
+          { name: 'Add Container Tag', value: 'tagManagerAddContainerTagPost', action: 'Adds container tag', description: 'Adds a new tag to a container for a site' },
+          { name: 'Add Container Trigger', value: 'tagManagerAddContainerTriggerPost', action: 'Adds container trigger', description: 'Adds a new trigger to a container for a site' },
+          { name: 'Add Container Variable', value: 'tagManagerAddContainerVariablePost', action: 'Adds container variable', description: 'Adds a new variable to a container for a site' },
+          { name: 'Change Debug Url', value: 'tagManagerChangeDebugUrlPost', action: 'Changes debug URL', description: 'Changes the debug URL for a container for a site' },
+          { name: 'Create Container Version', value: 'tagManagerCreateContainerVersionPost', action: 'Creates container version', description: 'Creates a new version of a container for a site' },
+          { name: 'Create Default Container For Site', value: 'tagManagerCreateDefaultContainerForSitePost', action: 'Creates default container for site', description: 'Creates a default container for a site' },
+          { name: 'Delete Container', value: 'tagManagerContainerDelete', action: 'Deletes container', description: 'Deletes a container from a site' },
+          { name: 'Delete Container Tag', value: 'tagManagerContainerTagDelete', action: 'Deletes container tag', description: 'Deletes a tag from a container for a site' },
+          { name: 'Delete Container Trigger', value: 'tagManagerContainerTriggerDelete', action: 'Deletes container trigger', description: 'Deletes a trigger from a container for a site' },
+          { name: 'Delete Container Variable', value: 'tagManagerContainerVariableDelete', action: 'Deletes container variable', description: 'Deletes a variable from a container for a site' },
+          { name: 'Delete Container Version', value: 'tagManagerContainerVersionDelete', action: 'Deletes container version', description: 'Deletes a specific container version for a site' },
+          { name: 'Disable Preview Mode', value: 'tagManagerDisablePreviewModePost', action: 'Disables preview mode', description: 'Disables preview mode for a container for a site' },
+          { name: 'Enable Preview Mode', value: 'tagManagerEnablePreviewModePost', action: 'Enables preview mode', description: 'Enables preview mode for a container for a site' },
+          { name: 'Export Container Version', value: 'tagManagerExportContainerVersionPost', action: 'Exports container version', description: 'Exports a specific container version' },
           { name: 'Get Available Comparisons', value: 'tagManagerAvailableComparisonsGet', action: 'Gets available comparisons', description: 'Gets available comparisons for container tags' },
           { name: 'Get Available Container Variables', value: 'tagManagerAvailableContainerVariablesGet', action: 'Gets available container variables', description: 'Gets the available variables for a container' },
           { name: 'Get Available Contexts', value: 'tagManagerAvailableContextsGet', action: 'Gets available contexts', description: 'Gets the available contexts for a container' },
@@ -1019,17 +1019,17 @@ export class Matomo implements INodeType {
           { name: 'Get Container Version', value: 'tagManagerContainerVersionGet', action: 'Gets container version', description: 'Gets details of a specific container version for a site' },
           { name: 'Get Container Versions', value: 'tagManagerContainerVersionsGet', action: 'Gets container versions', description: 'Gets all versions of a container for a site' },
           { name: 'Get Containers', value: 'tagManagerContainersGet', action: 'Gets containers', description: 'Gets the list of all containers for a site' },
-          { name: 'Import Container Version', value: 'tagManagerImportContainerVersionGet', action: 'Imports container version', description: 'Imports a container version from an exported file' },
-          { name: 'Pause Container Tag', value: 'tagManagerPauseContainerTagGet', action: 'Pauses container tag', description: 'Pauses a tag in a container for a site' },
-          { name: 'Publish Container Version', value: 'tagManagerPublishContainerVersionGet', action: 'Publishes container version', description: 'Publishes a container version for a site' },
-          { name: 'Resume Container Tag', value: 'tagManagerResumeContainerTagGet', action: 'Resumes container tag', description: 'Resumes a paused tag in a container for a site' },
-          { name: 'Update Container', value: 'tagManagerUpdateContainerGet', action: 'Updates container', description: 'Updates the configuration of an existing container for a site' },
-          { name: 'Update Container Tag', value: 'tagManagerUpdateContainerTagGet', action: 'Updates container tag', description: 'Updates an existing tag in a container for a site' },
-          { name: 'Update Container Trigger', value: 'tagManagerUpdateContainerTriggerGet', action: 'Updates container trigger', description: 'Updates an existing trigger in a container for a site' },
-          { name: 'Update Container Variable', value: 'tagManagerUpdateContainerVariableGet', action: 'Updates container variable', description: 'Updates an existing variable in a container for a site' },
-          { name: 'Update Container Version', value: 'tagManagerUpdateContainerVersionGet', action: 'Updates container version', description: 'Updates an existing container version for a site' },
+          { name: 'Import Container Version', value: 'tagManagerImportContainerVersionPost', action: 'Imports container version', description: 'Imports a container version from an exported file' },
+          { name: 'Pause Container Tag', value: 'tagManagerPauseContainerTagPost', action: 'Pauses container tag', description: 'Pauses a tag in a container for a site' },
+          { name: 'Publish Container Version', value: 'tagManagerPublishContainerVersionPost', action: 'Publishes container version', description: 'Publishes a container version for a site' },
+          { name: 'Resume Container Tag', value: 'tagManagerResumeContainerTagPost', action: 'Resumes container tag', description: 'Resumes a paused tag in a container for a site' },
+          { name: 'Update Container', value: 'tagManagerUpdateContainerPost', action: 'Updates container', description: 'Updates the configuration of an existing container for a site' },
+          { name: 'Update Container Tag', value: 'tagManagerUpdateContainerTagPost', action: 'Updates container tag', description: 'Updates an existing tag in a container for a site' },
+          { name: 'Update Container Trigger', value: 'tagManagerUpdateContainerTriggerPost', action: 'Updates container trigger', description: 'Updates an existing trigger in a container for a site' },
+          { name: 'Update Container Variable', value: 'tagManagerUpdateContainerVariablePost', action: 'Updates container variable', description: 'Updates an existing variable in a container for a site' },
+          { name: 'Update Container Version', value: 'tagManagerUpdateContainerVersionPost', action: 'Updates container version', description: 'Updates an existing container version for a site' },
         ],
-        default: 'tagManagerAddContainerGet',
+        default: 'tagManagerAddContainerPost',
       },
       {
         displayName: 'Operation',
@@ -1040,7 +1040,7 @@ export class Matomo implements INodeType {
         options: [
           { name: 'Get Challenges', value: 'tourChallengesGet', action: 'Gets challenges', description: 'Gets the list of challenges available in the Tour plugin' },
           { name: 'Get Level', value: 'tourLevelGet', action: 'Gets tour level', description: 'Gets the current level or progress in the Tour plugin' },
-          { name: 'Skip Challenge', value: 'tourSkipChallengeGet', action: 'Skips challenge', description: 'Skips a specific challenge in the Tour plugin' }
+          { name: 'Skip Challenge', value: 'tourSkipChallengePost', action: 'Skips challenge', description: 'Skips a specific challenge in the Tour plugin' }
         ],
         default: 'tourChallengesGet',
       },
@@ -1066,9 +1066,9 @@ export class Matomo implements INodeType {
         noDataExpression: true,
         displayOptions: { show: { resource: ['twoFactorAuth'] } },
         options: [
-          { name: 'Reset TwoFactorAuth', value: 'twoFactorAuthResetTwoFactorAuthGet', action: 'Resets two factor authentication', description: 'Resets the two factor authentication for a user' }
+          { name: 'Reset TwoFactorAuth', value: 'twoFactorAuthResetTwoFactorAuthPost', action: 'Resets two factor authentication', description: 'Resets the two factor authentication for a user' }
         ],
-        default: 'twoFactorAuthResetTwoFactorAuthGet',
+        default: 'twoFactorAuthResetTwoFactorAuthPost',
       },
       {
         displayName: 'Operation',
@@ -1084,7 +1084,7 @@ export class Matomo implements INodeType {
           { name: 'Get Location From IP', value: 'userCountryLocationFromIpGet', action: 'Gets location from IP', description: 'Gets location data from a given IP address' },
           { name: 'Get Number Of Distinct Countries', value: 'userCountryNumberOfDistinctCountriesGet', action: 'Gets number of distinct countries', description: 'Gets the number of distinct countries visiting a site' },
           { name: 'Get Region', value: 'userCountryRegionGet', action: 'Gets region data', description: 'Gets region data for a site and period' },
-          { name: 'Set Location Provider', value: 'userCountrySetLocationProviderGet', action: 'Sets location provider', description: 'Sets the location provider for user geolocation data' }
+          { name: 'Set Location Provider', value: 'userCountrySetLocationProviderPost', action: 'Sets location provider', description: 'Sets the location provider for user geolocation data' }
         ],
         default: 'userCountryCityGet',
       },
@@ -1120,9 +1120,9 @@ export class Matomo implements INodeType {
         noDataExpression: true,
         displayOptions: { show: { resource: ['usersManager'] } },
         options: [
-          { name: 'Add Capabilities', value: 'usersManagerAddCapabilitiesGet', action: 'Adds capabilities', description: 'Adds capabilities to a user' },
-          { name: 'Add User', value: 'usersManagerAddUserGet', action: 'Adds user', description: 'Adds a new user to Matomo' },
-          { name: 'Delete User', value: 'usersManagerDeleteUserGet', action: 'Deletes user', description: 'Deletes a specific user from Matomo' },
+          { name: 'Add Capabilities', value: 'usersManagerAddCapabilitiesPost', action: 'Adds capabilities', description: 'Adds capabilities to a user' },
+          { name: 'Add User', value: 'usersManagerAddUserPost', action: 'Adds user', description: 'Adds a new user to Matomo' },
+          { name: 'Delete User', value: 'usersManagerUserDelete', action: 'Deletes user', description: 'Deletes a specific user from Matomo' },
           { name: 'Get Available Capabilities', value: 'usersManagerAvailableCapabilitiesGet', action: 'Gets available capabilities', description: 'Gets the available capabilities for users in Matomo' },
           { name: 'Get Available Roles', value: 'usersManagerAvailableRolesGet', action: 'Gets available roles', description: 'Gets the available roles for users in Matomo' },
           { name: 'Get Sites Access For User', value: 'usersManagerSitesAccessForUserGet', action: 'Gets sites access for user', description: 'Gets the access level for a specific user across websites' },
@@ -1139,15 +1139,15 @@ export class Matomo implements INodeType {
           { name: 'Get Users Sites From Access', value: 'usersManagerUsersSitesFromAccessGet', action: 'Gets users from site access', description: 'Gets users with access to specific sites' },
           { name: 'Get Users With Site Access', value: 'usersManagerUsersWithSiteAccessGet', action: 'Gets users with site access', description: 'Gets users with access to specific websites' },
           { name: 'Has Super User Access', value: 'usersManagerHasSuperUserAccessGet', action: 'Checks if user has super user access', description: 'Checks if a user has super user access' },
-          { name: 'Invite User', value: 'usersManagerInviteUserGet', action: 'Invites user', description: 'Sends an invitation to a new user' },
-          { name: 'Set Super User Access', value: 'usersManagerSetSuperUserAccessGet', action: 'Sets super user access', description: 'Grants or revokes super user access for a user' },
-          { name: 'Set User Access', value: 'usersManagerSetUserAccessGet', action: 'Sets user access', description: 'Sets access level for a user to a specific website' },
-          { name: 'Set User Preference', value: 'usersManagerSetUserPreferenceGet', action: 'Sets user preference', description: 'Sets a specific preference for a user' },
-          { name: 'Update User', value: 'usersManagerUpdateUserGet', action: 'Updates user', description: 'Updates details for a specific user' },
-          { name: 'User Email Exists', value: 'usersManagerUserEmailExistsGet', action: 'Checks if user email exists', description: 'Checks if a user exists based on email address' },
-          { name: 'User Exists', value: 'usersManagerUserExistsGet', action: 'Checks if user exists', description: 'Checks if a user exists based on login' }
+          { name: 'Invite User', value: 'usersManagerInviteUserPost', action: 'Invites user', description: 'Sends an invitation to a new user' },
+          { name: 'Set Super User Access', value: 'usersManagerSetSuperUserAccessPost', action: 'Sets super user access', description: 'Grants or revokes super user access for a user' },
+          { name: 'Set User Access', value: 'usersManagerSetUserAccessPost', action: 'Sets user access', description: 'Sets access level for a user to a specific website' },
+          { name: 'Set User Preference', value: 'usersManagerSetUserPreferencePost', action: 'Sets user preference', description: 'Sets a specific preference for a user' },
+          { name: 'Update User', value: 'usersManagerUpdateUserPost', action: 'Updates user', description: 'Updates details for a specific user' },
+          { name: 'User Email Exists', value: 'usersManagerUserEmailExistsPost', action: 'Checks if user email exists', description: 'Checks if a user exists based on email address' },
+          { name: 'User Exists', value: 'usersManagerUserExistsPost', action: 'Checks if user exists', description: 'Checks if a user exists based on login' }
         ],
-        default: 'usersManagerAddCapabilitiesGet',
+        default: 'usersManagerAddCapabilitiesPost',
       },
       {
         displayName: 'Operation',
@@ -3526,7 +3526,14 @@ export class Matomo implements INodeType {
             default: ''
           }
         ]
-      }
+      },
+      {
+        displayName: 'Request Body',
+        name: 'requestBody',
+        type: 'json',
+	      default: '{}',
+        displayOptions:{ show:{ operation:['abTestingAddExperimentPost', 'abTestingArchiveExperimentPost', 'abTestingDeleteExperimentPost', 'abTestingFinishExperimentPost', 'abTestingStartExperimentPost', 'abTestingUpdateExperimentPost', 'advertisingConversionExportAddPost', 'advertisingConversionExportRegenerateAccessTokenPost', 'advertisingConversionExportUpdatePost', 'annotationAddPost', 'annotationSavePost', 'connectAccountCreateMatomoTagPost', 'crashMergeCrashesPost', 'crashSearchCrashMessagesForMergePost', 'crashSetIgnoreCrashPost', 'crashUnmergeCrashGroupPost', 'customAlertAddPost', 'customAlertEditPost', 'customDimensionConfigureExistingPost', 'customDimensionConfigureNewPost', 'customReportAddPost', 'customReportDuplicatePost', 'customReportPausePost', 'customReportResumePost', 'customReportUpdatePost', 'dashboardCopyToUserPost', 'dashboardCreateForUserPost', 'dashboardRemovePost', 'dashboardResetLayoutPost', 'feedbackSendForFeaturePost', 'feedbackSendForSurveyPost', 'feedbackUpdateReminderDatePost', 'formAddPost', 'formArchivePost', 'formUpdatePost', 'formUpdateFieldDisplayNamePost', 'funnelSaveNonGoalFunnelPost', 'funnelSetGoalFunnelPost', 'funnelTestUrlMatchesStepsPost', 'goalAddPost', 'goalUpdatePost', 'heatmapSessionRecordingAddHeatmaPost', 'heatmapSessionRecordingAddSessionRecordingPost', 'heatmapSessionRecordingDuplicateHeatmapPost', 'heatmapSessionRecordingEndHeatmapPost', 'heatmapSessionRecordingEndSessionRecordingPost', 'heatmapSessionRecordingPauseHeatmapPost', 'heatmapSessionRecordingPauseSessionRecordingPost', 'heatmapSessionRecordingResumeHeatmapPost', 'heatmapSessionRecordingResumeSessionRecordingPost', 'heatmapSessionRecordingTestUrlMatchPagesPost', 'heatmapSessionRecordingUpdateHeatmapPost', 'heatmapSessionRecordingUpdateSessionRecordingPost', 'languagesManagerSet12HourClockForUserPost',  'languagesManagerSetLanguageForUserPost', 'languagesManagerUses12HourClockForUserPost', 'loginUnblockBruteForceIPsPost', 'mobileMessagingAddPhoneNumberPost', 'mobileMessagingAreSmsApiCredentialsProvidedPost', 'mobileMessagingRemovePhoneNumberPost', 'mobileMessagingResendVerificationCodePost', 'mobileMessagingSetDelegatedManagementPost', 'mobileMessagingSetSmsApiCredentialPost', 'mobileMessagingValidatePhoneNumberPost', 'multiChannelConversionAttributionSetGoalAttributionPost', 'privacyManagerAnonymizeSomeRawDataPost', 'privacyManagerExportDataSubjectsPost', 'privacyManagerFindDataSubjectsPost', 'rollUpReportingAddRollUpPost', 'rollUpReportingUpdateRollUpPost', 'scheduledReportAddReportPost', 'scheduledReportGenerateReportPost', 'scheduledReportSendReportPost', 'scheduledReportUpdateReportPost', 'segmentEditorAddSegmentPost', 'segmentEditorUpdateSegmentPost', 'sitesManagerAddSitePost', 'sitesManagerAddSiteAliasUrlsPost', 'sitesManagerRenameGroupPost', 'sitesManagerSetDefaultCurrencyPost', 'sitesManagerSetDefaultTimezonePost', 'sitesManagerSetGlobalExcludedIpsPost', 'sitesManagerSetGlobalExcludedReferrersPost', 'sitesManagerSetGlobalExcludedUserAgentsPost', 'sitesManagerSetGlobalQueryParamExclusionPost', 'sitesManagerSetGlobalSearchParametersPost', 'sitesManagerSetKeepUrlFragmentsGlobalPost', 'sitesManagerSetSiteAliasUrlsPost', 'sitesManagerUpdateSitePost', 'tagManagerAddContainerPost', 'tagManagerAddContainerTagPost', 'tagManagerAddContainerTriggerPost', 'tagManagerAddContainerVariablePost', 'tagManagerChangeDebugUrlPost', 'tagManagerCreateContainerVersionPost', 'tagManagerCreateDefaultContainerForSitePost', 'tagManagerDisablePreviewModePost', 'tagManagerEnablePreviewModePost', 'tagManagerExportContainerVersionPost', 'tagManagerImportContainerVersionPost', 'tagManagerPauseContainerTagPost', 'tagManagerPublishContainerVersionPost', 'tagManagerResumeContainerTagPost', 'tagManagerUpdateContainerPost', 'tagManagerUpdateContainerTagPost', 'tagManagerUpdateContainerTriggerPost', 'tagManagerUpdateContainerVariablePost', 'tagManagerUpdateContainerVersionPost', 'tourSkipChallengePost', 'twoFactorAuthResetTwoFactorAuthPost', 'userCountrySetLocationProviderPost'] } }
+     }
 		]
 	};
 
@@ -3545,6 +3552,7 @@ export class Matomo implements INodeType {
        	const operation = this.getNodeParameter('operation', i, '') as string;		
         const resource = this.getNodeParameter('resource', i, '') as string;		
         const queryParameters = this.getNodeParameter('queryParameters', i, {}) as Record<string, string | number | boolean>;
+        const requestBody = this.getNodeParameter('requestBody', i, '') as string;
         
         let url = `${domain}?token_auth=${authToken}&module=API`;
       
@@ -3569,19 +3577,19 @@ export class Matomo implements INodeType {
               case 'abTestingMetricDetailsGet':
                 url += `&method=AbTesting.getMetricDetails&idSite${queryString}`;
                 break;
-              case 'abTestingAddExperimentGet':
+              case 'abTestingAddExperimentPost':
                 url += `&method=AbTesting.addExperiment${queryString}`;
                 break;
-              case 'abTestingUpdateExperimentGet':
+              case 'abTestingUpdateExperimentPost':
                 url += `&method=AbTesting.updateExperiment${queryString}`;
                 break;
-              case 'abTestingStartExperimentGet':
+              case 'abTestingStartExperimentPost':
                 url += `&method=AbTesting.startExperiment${queryString}`;
                 break;
-              case 'abTestingFinishExperimentGet':
+              case 'abTestingFinishExperimentPost':
                 url += `&method=AbTesting.finishExperiment${queryString}`;
                 break;
-              case 'abTestingArchiveExperimentGet':
+              case 'abTestingArchiveExperimentPost':
                 url += `&method=AbTesting.archiveExperiment${queryString}`;
                 break;
               case 'abTestingJSIncludeTemplateGet':
@@ -3602,7 +3610,7 @@ export class Matomo implements INodeType {
               case 'abTestingExperimentGet':
                 url += `&method=AbTesting.getExperiment${queryString}`;
                 break;
-              case 'abTestingDeleteExperimentGet':
+              case 'abTestingDeleteExperimentPost':
                 url += `&method=AbTesting.deleteExperiment${queryString}`;
                 break;
               case 'abTestingAvailableStatusesGet':
@@ -3692,35 +3700,35 @@ export class Matomo implements INodeType {
             break;
           case 'advertisingConversionExport':
             switch (operation) {
-              case 'advertisingConversionExportAddGet':
+              case 'advertisingConversionExportAddPost':
                 url += `&method=AdvertisingConversionExport.addConversionExport${queryString}`;
                 break;
-              case 'advertisingConversionExportDeleteGet':
+              case 'advertisingConversionExportDelete':
                 url += `&method=AdvertisingConversionExport.deleteConversionExport${queryString}`;
                 break;
-              case 'advertisingConversionExportGetGet':
+              case 'advertisingConversionExportGet':
                 url += `&method=AdvertisingConversionExport.getConversionExport${queryString}`;
                 break;
               case 'advertisingConversionExportListGet':
                 url += `&method=AdvertisingConversionExport.getConversionExports${queryString}`;
                 break;
-              case 'advertisingConversionExportRegenerateAccessTokenGet':
+              case 'advertisingConversionExportRegenerateAccessTokenPost':
                 url += `&method=AdvertisingConversionExport.regenerateAccessToken${queryString}`;
                 break;
-              case 'advertisingConversionExportUpdateGet':
+              case 'advertisingConversionExportUpdatePost':
                 url += `&method=AdvertisingConversionExport.updateConversionExport${queryString}`;
                 break;
             }
             break;
           case 'annotation':
             switch (operation) {
-              case 'annotationAddGet':
+              case 'annotationAddPost':
                 url += `&method=Annotations.add${queryString}`;
                 break;
-              case 'annotationDeleteAllGet':
+              case 'annotationAllDelete':
                 url += `&method=Annotations.deleteAll${queryString}`;
                 break;
-              case 'annotationDeleteGet':
+              case 'annotationDelete':
                 url += `&method=Annotations.delete${queryString}`;
                 break;
               case 'annotationGet':
@@ -3732,7 +3740,7 @@ export class Matomo implements INodeType {
               case 'annotationCountForDatesGet':
                 url += `&method=Annotations.getAnnotationCountForDates${queryString}`;
                 break;
-              case 'annotationSaveGet':
+              case 'annotationSavePost':
                 url += `&method=Annotations.save${queryString}`;
                 break;
             }
@@ -3800,7 +3808,7 @@ export class Matomo implements INodeType {
               case 'connectAccountGTMWorkspaceListGet':
                 url += `&method=ConnectAccounts.getGtmWorkspaceList${queryString}`;
                 break;
-              case 'connectAccountCreateMatomoTagGet':
+              case 'connectAccountCreateMatomoTagPost':
                 url += `&method=ConnectAccounts.createMatomoTag${queryString}`;
                 break;
             }
@@ -3817,10 +3825,10 @@ export class Matomo implements INodeType {
             break;
           case 'coreAdminHome':
             switch (operation) {
-              case 'coreAdminHomeDeleteAllTrackingFailuresGet':
+              case 'coreAdminHomeAllTrackingFailuresDelete':
                 url += `&method=CoreAdminHome.deleteAllTrackingFailures${queryString}`;
                 break;
-              case 'coreAdminHomeDeleteTrackingFailureGet':
+              case 'coreAdminHomeTrackingFailureDelete':
                 url += `&method=CoreAdminHome.deleteTrackingFailure${queryString}`;
                 break;
               case 'coreAdminHomeTrackingFailuresGet':
@@ -3914,32 +3922,32 @@ export class Matomo implements INodeType {
               case 'crashUnidentifiedCrashMessagesGet':
                 url += `&method=CrashAnalytics.getUnidentifiedCrashMessages${queryString}`;
                 break;
-              case 'crashMergeCrashesGet':
+              case 'crashMergeCrashesPost':
                 url += `&method=CrashAnalytics.mergeCrashes${queryString}`;
                 break;
-              case 'crashSearchCrashMessagesForMergeGet':
+              case 'crashSearchCrashMessagesForMergePost':
                 url += `&method=CrashAnalytics.searchCrashMessagesForMerge${queryString}`;
                 break;
-              case 'crashSetIgnoreCrashGet':
+              case 'crashSetIgnoreCrashPost':
                 url += `&method=CrashAnalytics.setIgnoreCrash${queryString}`;
                 break;
-              case 'crashUnmergeCrashGroupGet':
+              case 'crashUnmergeCrashGroupPost':
                 url += `&method=CrashAnalytics.unmergeCrashGroup${queryString}`;
                 break;
             }
             break;
           case 'customAlert':
             switch (operation) {
-              case 'customAlertAddGet':
+              case 'customAlertAddPost':
                 url += `&method=CustomAlerts.addAlert${queryString}`;
                 break;
-              case 'customAlertDeleteGet':
+              case 'customAlertDelete':
                 url += `&method=CustomAlerts.deleteAlert${queryString}`;
                 break;
-              case 'customAlertEditGet':
+              case 'customAlertEditPost':
                 url += `&method=CustomAlerts.editAlert${queryString}`;
                 break;
-              case 'customAlertGetGet':
+              case 'customAlertGet':
                 url += `&method=CustomAlerts.getAlert${queryString}`;
                 break;
               case 'customAlertListGet':
@@ -3958,10 +3966,10 @@ export class Matomo implements INodeType {
               case 'customDimensionGetGet':
                 url += `&method=CustomDimensions.getCustomDimension${queryString}`;
                 break;
-              case 'customDimensionConfigureNewGet':
+              case 'customDimensionConfigureNewPost':
                 url += `&method=CustomDimensions.configureNewCustomDimension${queryString}`;
                 break;
-              case 'customDimensionConfigureExistingGet':
+              case 'customDimensionConfigureExistingPost':
                 url += `&method=CustomDimensions.configureExistingCustomDimension${queryString}`;
                 break;
               case 'customDimensionConfiguredGet':
@@ -3987,13 +3995,13 @@ export class Matomo implements INodeType {
             break;  
           case 'customReport':
             switch (operation) {
-              case 'customReportAddGet':
+              case 'customReportAddPost':
                 url += `&method=CustomReports.addCustomReport${queryString}`;
                 break;
-              case 'customReportDeleteGet':
+              case 'customReportDelete':
                 url += `&method=CustomReports.deleteCustomReport${queryString}`;
                 break;
-              case 'customReportDuplicateGet':
+              case 'customReportDuplicatePost':
                 url += `&method=CustomReports.duplicateCustomReport${queryString}`;
                 break;
               case 'customReportAvailableCategoriesGet':
@@ -4017,13 +4025,13 @@ export class Matomo implements INodeType {
               case 'customReportGet':
                 url += `&method=CustomReports.getCustomReport${queryString}`;
                 break;
-              case 'customReportPauseGet':
+              case 'customReportPausePost':
                 url += `&method=CustomReports.pauseCustomReport${queryString}`;
                 break;
-              case 'customReportResumeGet':
+              case 'customReportResumePost':
                 url += `&method=CustomReports.resumeCustomReport${queryString}`;
                 break;
-              case 'customReportUpdateGet':
+              case 'customReportUpdatePost':
                 url += `&method=CustomReports.updateCustomReport${queryString}`;
                 break;
             }
@@ -4043,19 +4051,19 @@ export class Matomo implements INodeType {
             break;
           case 'dashboard':
             switch (operation) {
-              case 'dashboardCopyToUserGet':
+              case 'dashboardCopyToUserPost':
                 url += `&method=Dashboard.copyDashboardToUser${queryString}`;
                 break;
-              case 'dashboardCreateForUserGet':
+              case 'dashboardCreateForUserPost':
                 url += `&method=Dashboard.createNewDashboardForUser${queryString}`;
                 break;
               case 'dashboardGet':
                 url += `&method=Dashboard.getDashboards${queryString}`;
                 break;
-              case 'dashboardRemoveGet':
+              case 'dashboardRemovePost':
                 url += `&method=Dashboard.removeDashboard${queryString}`;
                 break;
-              case 'dashboardResetLayoutGet':
+              case 'dashboardResetLayoutPost':
                 url += `&method=Dashboard.resetDashboardLayout${queryString}`;
                 break;
             }
@@ -4128,26 +4136,26 @@ export class Matomo implements INodeType {
             break;
           case 'feedback':
             switch (operation) {
-              case 'feedbackSendForFeatureGet':
+              case 'feedbackSendForFeaturePost':
                 url += `&method=Feedback.sendFeedbackForFeature${queryString}`;
                 break;
-              case 'feedbackSendForSurveyGet':
+              case 'feedbackSendForSurveyPost':
                 url += `&method=Feedback.sendFeedbackForSurvey${queryString}`;
                 break;
-              case 'feedbackUpdateReminderDateGet':
+              case 'feedbackUpdateReminderDatePost':
                 url += `&method=Feedback.updateFeedbackReminderDate${queryString}`;
                 break;
             }
             break;
           case 'form':
             switch (operation) {
-              case 'formAddGet':
+              case 'formAddPost':
                 url += `&method=FormAnalytics.addForm${queryString}`;
                 break;
-              case 'formArchiveGet':
+              case 'formArchivePost':
                 url += `&method=FormAnalytics.archiveForm${queryString}`;
                 break;
-              case 'formDeleteGet':
+              case 'formDelete':
                 url += `&method=FormAnalytics.deleteForm${queryString}`;
                 break;
               case 'formGet':
@@ -4210,20 +4218,20 @@ export class Matomo implements INodeType {
               case 'formUneededFieldsGet':
                 url += `&method=FormAnalytics.getUneededFields${queryString}`;
                 break;
-              case 'formUpdateGet':
+              case 'formUpdatePost':
                 url += `&method=FormAnalytics.updateForm${queryString}`;
                 break;
-              case 'formUpdateFieldDisplayNameGet':
+              case 'formUpdateFieldDisplayNamePost':
                 url += `&method=FormAnalytics.updateFormFieldDisplayName${queryString}`;
                 break;
             }
             break;
           case 'funnel':
             switch (operation) {
-              case 'funnelDeleteGoalFunnelGet':
+              case 'funnelGoalFunnelDelete':
                 url += `&method=Funnels.deleteGoalFunnel${queryString}`;
                 break;
-              case 'funnelDeleteNonGoalFunnelGet':
+              case 'funnelNonGoalFunnelDelete':
                 url += `&method=Funnels.deleteNonGoalFunnel${queryString}`;
                 break;
               case 'funnelAllActivatedFunnelsForSiteGet':
@@ -4262,23 +4270,23 @@ export class Matomo implements INodeType {
               case 'funnelHasAnyActivatedFunnelForSiteGet':
                 url += `&method=Funnels.hasAnyActivatedFunnelForSite${queryString}`;
                 break;
-              case 'funnelSaveNonGoalFunnelGet':
+              case 'funnelSaveNonGoalFunnelPost':
                 url += `&method=Funnels.saveNonGoalFunnel${queryString}`;
                 break;
-              case 'funnelSetGoalFunnelGet':
+              case 'funnelSetGoalFunnelPost':
                 url += `&method=Funnels.setGoalFunnel${queryString}`;
                 break;
-              case 'funnelTestUrlMatchesStepsGet':
+              case 'funnelTestUrlMatchesStepsPost':
                 url += `&method=Funnels.testUrlMatchesSteps${queryString}`;
                 break;
             }
             break;
           case 'goal':
             switch (operation) {
-              case 'goalAddGet':
+              case 'goalAddPost':
                 url += `&method=Goals.addGoal${queryString}`;
                 break;
-              case 'goalDeleteGet':
+              case 'goalDelete':
                 url += `&method=Goals.deleteGoal${queryString}`;
                 break;
               case 'goelMetricsGet':
@@ -4305,41 +4313,41 @@ export class Matomo implements INodeType {
               case 'goalVisitsUntilConversionGet':
                 url += `&method=Goals.getVisitsUntilConversion${queryString}`;
                 break;
-              case 'goalUpdateGet':
+              case 'goalUpdatePost':
                 url += `&method=Goals.updateGoal${queryString}`;
                 break;
             }
             break;
           case 'heatmapSessionRecording':
             switch (operation) {
-              case 'heatmapSessionRecordingAddHeatmapGet':
+              case 'heatmapSessionRecordingAddHeatmaPost':
                 url += `&method=HeatmapSessionRecording.addHeatmap${queryString}`;
                 break;
-              case 'heatmapSessionRecordingAddSessionRecordingGet':
+              case 'heatmapSessionRecordingAddSessionRecordingPost':
                 url += `&method=HeatmapSessionRecording.addSessionRecording${queryString}`;
                 break;
-              case 'heatmapSessionRecordingDeleteHeatmapGet':
+              case 'heatmapSessionRecordingHeatmapDelete':
                 url += `&method=HeatmapSessionRecording.deleteHeatmap${queryString}`;
                 break;
-              case 'heatmapSessionRecordingDeleteHeatmapScreenshotGet':
+              case 'heatmapSessionRecordingHeatmapScreenshotDelete':
                 url += `&method=HeatmapSessionRecording.deleteHeatmapScreenshot${queryString}`;
                 break;
-              case 'heatmapSessionRecordingDeleteRecordedPageviewGet':
+              case 'heatmapSessionRecordingRecordedPageviewDelete':
                 url += `&method=HeatmapSessionRecording.deleteRecordedPageview${queryString}`;
                 break;
-              case 'heatmapSessionRecordingDeleteRecordedSessionGet':
+              case 'heatmapSessionRecordingRecordedSessionDelete':
                 url += `&method=HeatmapSessionRecording.deleteRecordedSession${queryString}`;
                 break;
-              case 'heatmapSessionRecordingDeleteSessionRecordingGet':
+              case 'heatmapSessionRecordingSessionRecordingDelete':
                 url += `&method=HeatmapSessionRecording.deleteSessionRecording${queryString}`;
                 break;
-              case 'heatmapSessionRecordingDuplicateHeatmapGet':
+              case 'heatmapSessionRecordingDuplicateHeatmapPost':
                 url += `&method=HeatmapSessionRecording.duplicateHeatmap${queryString}`;
                 break;
-              case 'heatmapSessionRecordingEndHeatmapGet':
+              case 'heatmapSessionRecordingEndHeatmapPost':
                 url += `&method=HeatmapSessionRecording.endHeatmap${queryString}`;
                 break;
-              case 'heatmapSessionRecordingEndSessionRecordingGet':
+              case 'heatmapSessionRecordingEndSessionRecordingPost':
                 url += `&method=HeatmapSessionRecording.endSessionRecording${queryString}`;
                 break;
               case 'heatmapSessionRecordingAvailableDeviceTypesGet':
@@ -4387,25 +4395,25 @@ export class Matomo implements INodeType {
               case 'heatmapSessionRecordingSessionRecordingsGet':
                 url += `&method=HeatmapSessionRecording.getSessionRecordings${queryString}`;
                 break;
-              case 'heatmapSessionRecordingPauseHeatmapGet':
+              case 'heatmapSessionRecordingPauseHeatmapPost':
                 url += `&method=HeatmapSessionRecording.pauseHeatmap${queryString}`;
                 break;
-              case 'heatmapSessionRecordingPauseSessionRecordingGet':
+              case 'heatmapSessionRecordingPauseSessionRecordingPost':
                 url += `&method=HeatmapSessionRecording.pauseSessionRecording${queryString}`;
                 break;
-              case 'heatmapSessionRecordingResumeHeatmapGet':
+              case 'heatmapSessionRecordingResumeHeatmapPost':
                 url += `&method=HeatmapSessionRecording.resumeHeatmap${queryString}`;
                 break;
-              case 'heatmapSessionRecordingResumeSessionRecordingGet':
+              case 'heatmapSessionRecordingResumeSessionRecordingPost':
                 url += `&method=HeatmapSessionRecording.resumeSessionRecording${queryString}`;
                 break;
-              case 'heatmapSessionRecordingTestUrlMatchPagesGet':
+              case 'heatmapSessionRecordingTestUrlMatchPagesPost':
                 url += `&method=HeatmapSessionRecording.testUrlMatchPages${queryString}`;
                 break;
-              case 'heatmapSessionRecordingUpdateHeatmapGet':
+              case 'heatmapSessionRecordingUpdateHeatmapPost':
                 url += `&method=HeatmapSessionRecording.updateHeatmap${queryString}`;
                 break;
-              case 'heatmapSessionRecordingUpdateSessionRecordingGet':
+              case 'heatmapSessionRecordingUpdateSessionRecordingPost':
                 url += `&method=HeatmapSessionRecording.updateSessionRecording${queryString}`;
                 break;
             }
@@ -4456,13 +4464,13 @@ export class Matomo implements INodeType {
               case 'languagesManagerIsLanguageAvailableGet':
                 url += `&method=LanguagesManager.isLanguageAvailable${queryString}`;
                 break;
-              case 'languagesManagerSet12HourClockForUserGet':
+              case 'languagesManagerSet12HourClockForUserPost':
                 url += `&method=LanguagesManager.set12HourClockForUser${queryString}`;
                 break;
-              case 'languagesManagerSetLanguageForUserGet':
+              case 'languagesManagerSetLanguageForUserPost':
                 url += `&method=LanguagesManager.setLanguageForUser${queryString}`;
                 break;
-              case 'languagesManagerUses12HourClockForUserGet':
+              case 'languagesManagerUses12HourClockForUserPost':
                 url += `&method=LanguagesManager.uses12HourClockForUser${queryString}`;
                 break;
             }
@@ -4491,7 +4499,7 @@ export class Matomo implements INodeType {
             break;
           case 'login':
             switch (operation) {
-              case 'loginUnblockBruteForceIPsGet':
+              case 'loginUnblockBruteForceIPsPost':
                 url += `&method=Login.unblockBruteForceIPs${queryString}`;
                 break;
             }
@@ -4584,13 +4592,13 @@ export class Matomo implements INodeType {
             break;
           case 'mobileMessaging':
             switch (operation) {
-              case 'mobileMessagingAddPhoneNumberGet':
+              case 'mobileMessagingAddPhoneNumberPost':
                 url += `&method=MobileMessaging.addPhoneNumber${queryString}`;
                 break;
-              case 'mobileMessagingAreSmsApiCredentialsProvidedGet':
+              case 'mobileMessagingAreSmsApiCredentialsProvidedPost':
                 url += `&method=MobileMessaging.areSMSAPICredentialProvided${queryString}`;
                 break;
-              case 'mobileMessagingDeleteSmsApiCredentialGet':
+              case 'mobileMessagingSmsApiCredentialDelete':
                 url += `&method=MobileMessaging.deleteSMSAPICredential${queryString}`;
                 break;
               case 'mobileMessagingCreditLeftGet':
@@ -4605,19 +4613,19 @@ export class Matomo implements INodeType {
               case 'mobileMessagingSmsProviderGet':
                 url += `&method=MobileMessaging.getSMSProvider${queryString}`;
                 break;
-              case 'mobileMessagingRemovePhoneNumberGet':
+              case 'mobileMessagingRemovePhoneNumberPost':
                 url += `&method=MobileMessaging.removePhoneNumber${queryString}`;
                 break;
-              case 'mobileMessagingResendVerificationCodeGet':
+              case 'mobileMessagingResendVerificationCodePost':
                 url += `&method=MobileMessaging.resendVerificationCode${queryString}`;
                 break;
-              case 'mobileMessagingSetDelegatedManagementGet':
+              case 'mobileMessagingSetDelegatedManagementPost':
                 url += `&method=MobileMessaging.setDelegatedManagement${queryString}`;
                 break;
-              case 'mobileMessagingSetSmsApiCredentialGet':
+              case 'mobileMessagingSetSmsApiCredentialPost':
                 url += `&method=MobileMessaging.setSMSAPICredential${queryString}`;
                 break;
-              case 'mobileMessagingValidatePhoneNumberGet':
+              case 'mobileMessagingValidatePhoneNumberPost':
                 url += `&method=MobileMessaging.validatePhoneNumber${queryString}`;
                 break;
             }
@@ -4636,7 +4644,7 @@ export class Matomo implements INodeType {
               case 'multiChannelConversionAttributionSiteAttributionGoalsGet':
                 url += `&method=MultiChannelConversionAttribution.getSiteAttributionGoals${queryString}`;
                 break;
-              case 'multiChannelConversionAttributionSetGoalAttributionGet':
+              case 'multiChannelConversionAttributionSetGoalAttributionPost':
                 url += `&method=MultiChannelConversionAttribution.setGoalAttribution${queryString}`;
                 break;
             }
@@ -4673,16 +4681,16 @@ export class Matomo implements INodeType {
             break;
           case 'privacyManager':
             switch (operation) {
-              case 'privacyManagerAnonymizeSomeRawDataGet':
+              case 'privacyManagerAnonymizeSomeRawDataPost':
                 url += `&method=PrivacyManager.anonymizeSomeRawData${queryString}`;
                 break;
-              case 'privacyManagerDeleteDataSubjectsGet':
+              case 'privacyManagerDataSubjectsDelete':
                 url += `&method=PrivacyManager.deleteDataSubjects${queryString}`;
                 break;
-              case 'privacyManagerExportDataSubjectsGet':
+              case 'privacyManagerExportDataSubjectsPost':
                 url += `&method=PrivacyManager.exportDataSubjects${queryString}`;
                 break;
-              case 'privacyManagerFindDataSubjectsGet':
+              case 'privacyManagerFindDataSubjectsPost':
                 url += `&method=PrivacyManager.findDataSubjects${queryString}`;
                 break;
               case 'privacyManagerAvailableVisitColumnsToAnonymizeGet':
@@ -4775,35 +4783,35 @@ export class Matomo implements INodeType {
             break;
           case 'rollUpReporting':
             switch (operation) {
-              case 'rollUpReportingAddRollUpGet':
+              case 'rollUpReportingAddRollUpPost':
                 url += `&method=RollUpReporting.addRollUp${queryString}`;
                 break;
-              case 'rollUpReportingUpdateRollUpGet':
+              case 'rollUpReportingUpdateRollUpPost':
                 url += `&method=RollUpReporting.updateRollUp${queryString}`;
                 break;
-              case 'rollUpReportingRollUpsGet':
+              case 'rollUpReportingRollUpsPost':
                 url += `&method=RollUpReporting.getRollUps${queryString}`;
                 break;
             }
             break;
           case 'scheduledReport':
             switch (operation) {
-              case 'scheduledReportAddReportGet':
+              case 'scheduledReportAddReportPost':
                 url += `&method=ScheduledReports.addReport${queryString}`;
                 break;
-              case 'scheduledReportUpdateReportGet':
+              case 'scheduledReportUpdateReportPost':
                 url += `&method=ScheduledReports.updateReport${queryString}`;
                 break;
-              case 'scheduledReportDeleteReportGet':
+              case 'scheduledReportReportDelete':
                 url += `&method=ScheduledReports.deleteReport${queryString}`;
                 break;
               case 'scheduledReportReportsGet':
                 url += `&method=ScheduledReports.getReports${queryString}`;
                 break;
-              case 'scheduledReportGenerateReportGet':
+              case 'scheduledReportGenerateReportPost':
                 url += `&method=ScheduledReports.generateReport${queryString}`;
                 break;
-              case 'scheduledReportSendReportGet':
+              case 'scheduledReportSendReportPost':
                 url += `&method=ScheduledReports.sendReport${queryString}`;
                 break;
             }
@@ -4853,13 +4861,13 @@ export class Matomo implements INodeType {
               case 'segmentEditorUserCanAddNewSegmentGet':
                 url += `&method=SegmentEditor.isUserCanAddNewSegment${queryString}`;
                 break;
-              case 'segmentEditorDeleteSegmentGet':
+              case 'segmentEditorSegmentDelete':
                 url += `&method=SegmentEditor.delete${queryString}`;
                 break;
-              case 'segmentEditorUpdateSegmentGet':
+              case 'segmentEditorUpdateSegmentPost':
                 url += `&method=SegmentEditor.update${queryString}`;
                 break;
-              case 'segmentEditorAddSegmentGet':
+              case 'segmentEditorAddSegmentPost':
                 url += `&method=SegmentEditor.add${queryString}`;
                 break;
               case 'segmentEditorSegmentGet':
@@ -4930,28 +4938,28 @@ export class Matomo implements INodeType {
               case 'sitesManagerGetSitesIdFromSiteUrlGet':
                 url += `&method=SitesManager.getSitesIdFromSiteUrl${queryString}`;
                 break;
-              case 'sitesManagerAddSiteGet':
+              case 'sitesManagerAddSitePost':
                 url += `&method=SitesManager.addSite${queryString}`;
                 break;
               case 'sitesManagerGetSiteSettingsGet':
                 url += `&method=SitesManager.getSiteSettings${queryString}`;
                 break;
-              case 'sitesManagerDeleteSiteGet':
+              case 'sitesManagerSiteDelete':
                 url += `&method=SitesManager.deleteSite${queryString}`;
                 break;
-              case 'sitesManagerAddSiteAliasUrlsGet':
+              case 'sitesManagerAddSiteAliasUrlsPost':
                 url += `&method=SitesManager.addSiteAliasUrls${queryString}`;
                 break;
-              case 'sitesManagerSetSiteAliasUrlsGet':
+              case 'sitesManagerSetSiteAliasUrlsPost':
                 url += `&method=SitesManager.setSiteAliasUrls${queryString}`;
                 break;
               case 'sitesManagerGetIpsForRangeGet':
                 url += `&method=SitesManager.getIpsForRange${queryString}`;
                 break;
-              case 'sitesManagerSetGlobalExcludedIpsGet':
+              case 'sitesManagerSetGlobalExcludedIpsPost':
                 url += `&method=SitesManager.setGlobalExcludedIps${queryString}`;
                 break;
-              case 'sitesManagerSetGlobalSearchParametersGet':
+              case 'sitesManagerSetGlobalSearchParametersPost':
                 url += `&method=SitesManager.setGlobalSearchParameters${queryString}`;
                 break;
               case 'sitesManagerGetSearchKeywordParametersGlobalGet':
@@ -4969,7 +4977,7 @@ export class Matomo implements INodeType {
               case 'sitesManagerGetExcludedUserAgentsGlobalGet':
                 url += `&method=SitesManager.getExcludedUserAgentsGlobal${queryString}`;
                 break;
-              case 'sitesManagerSetGlobalExcludedUserAgentsGet':
+              case 'sitesManagerSetGlobalExcludedUserAgentsPost':
                 url += `&method=SitesManager.setGlobalExcludedUserAgents${queryString}`;
                 break;
               case 'sitesManagerGetExcludedReferrersGet':
@@ -4978,13 +4986,13 @@ export class Matomo implements INodeType {
               case 'sitesManagerGetExcludedReferrersGlobalGet':
                 url += `&method=SitesManager.getExcludedReferrersGlobal${queryString}`;
                 break;
-              case 'sitesManagerSetGlobalExcludedReferrersGet':
+              case 'sitesManagerSetGlobalExcludedReferrersPost':
                 url += `&method=SitesManager.setGlobalExcludedReferrers${queryString}`;
                 break;
               case 'sitesManagerGetKeepUrlFragmentsGlobalGet':
                 url += `&method=SitesManager.getKeepURLFragmentsGlobal${queryString}`;
                 break;
-              case 'sitesManagerSetKeepUrlFragmentsGlobalGet':
+              case 'sitesManagerSetKeepUrlFragmentsGlobalPost':
                 url += `&method=SitesManager.setKeepURLFragmentsGlobal${queryString}`;
                 break;
               case 'sitesManagerGetExcludedIpsGlobalGet':
@@ -4993,22 +5001,22 @@ export class Matomo implements INodeType {
               case 'sitesManagerGetDefaultCurrencyGet':
                 url += `&method=SitesManager.getDefaultCurrency${queryString}`;
                 break;
-              case 'sitesManagerSetDefaultCurrencyGet':
+              case 'sitesManagerSetDefaultCurrencyPost':
                 url += `&method=SitesManager.setDefaultCurrency${queryString}`;
                 break;
               case 'sitesManagerGetDefaultTimezoneGet':
                 url += `&method=SitesManager.getDefaultTimezone${queryString}`;
                 break;
-              case 'sitesManagerSetDefaultTimezoneGet':
+              case 'sitesManagerSetDefaultTimezonePost':
                 url += `&method=SitesManager.setDefaultTimezone${queryString}`;
                 break;
-              case 'sitesManagerSetGlobalQueryParamExclusionGet':
+              case 'sitesManagerSetGlobalQueryParamExclusionPost':
                 url += `&method=SitesManager.setGlobalQueryParamExclusion${queryString}`;
                 break;
               case 'sitesManagerGetExclusionTypeForQueryParamsGet':
                 url += `&method=SitesManager.getExclusionTypeForQueryParams${queryString}`;
                 break;
-              case 'sitesManagerUpdateSiteGet':
+              case 'sitesManagerUpdateSitePost':
                 url += `&method=SitesManager.updateSite${queryString}`;
                 break;
               case 'sitesManagerGetCurrencyListGet':
@@ -5029,7 +5037,7 @@ export class Matomo implements INodeType {
               case 'sitesManagerGetUniqueSiteTimezonesGet':
                 url += `&method=SitesManager.getUniqueSiteTimezones${queryString}`;
                 break;
-              case 'sitesManagerRenameGroupGet':
+              case 'sitesManagerRenameGroupPost':
                 url += `&method=SitesManager.renameGroup${queryString}`;
                 break;
               case 'sitesManagerGetPatternMatchSitesGet':
@@ -5042,16 +5050,16 @@ export class Matomo implements INodeType {
             break;
           case 'tagManager':
             switch (operation) {
-              case 'tagManagerAddContainerGet':
+              case 'tagManagerAddContainerPost':
                 url += `&method=TagManager.addContainer${queryString}`;
                 break;
-              case 'tagManagerAddContainerTagGet':
+              case 'tagManagerAddContainerTagPost':
                 url += `&method=TagManager.addContainerTag${queryString}`;
                 break;
-              case 'tagManagerAddContainerTriggerGet':
+              case 'tagManagerAddContainerTriggerPost':
                 url += `&method=TagManager.addContainerTrigger${queryString}`;
                 break;
-              case 'tagManagerAddContainerVariableGet':
+              case 'tagManagerAddContainerVariablePost':
                 url += `&method=TagManager.addContainerVariable${queryString}`;
                 break;
               case 'tagManagerAvailableComparisonsGet':
@@ -5081,7 +5089,7 @@ export class Matomo implements INodeType {
               case 'tagManagerAvailableVariableTypesInContextGet':
                 url += `&method=TagManager.getAvailableVariableTypesInContext${queryString}`;
                 break;
-              case 'tagManagerChangeDebugUrlGet':
+              case 'tagManagerChangeDebugUrlPost':
                 url += `&method=TagManager.changeDebugUrl${queryString}`;
                 break;
               case 'tagManagerContainerEmbedCodeGet':
@@ -5126,61 +5134,61 @@ export class Matomo implements INodeType {
               case 'tagManagerContainersGet':
                 url += `&method=TagManager.getContainers${queryString}`;
                 break;
-              case 'tagManagerCreateContainerVersionGet':
+              case 'tagManagerCreateContainerVersionPost':
                 url += `&method=TagManager.createContainerVersion${queryString}`;
                 break;
-              case 'tagManagerCreateDefaultContainerForSiteGet':
+              case 'tagManagerCreateDefaultContainerForSitePost':
                 url += `&method=TagManager.createDefaultContainerForSite${queryString}`;
                 break;
-              case 'tagManagerDeleteContainerGet':
+              case 'tagManagerContainerDelete':
                 url += `&method=TagManager.deleteContainer${queryString}`;
                 break;
-              case 'tagManagerDeleteContainerTagGet':
+              case 'tagManagerContainerTagDelete':
                 url += `&method=TagManager.deleteContainerTag${queryString}`;
                 break;
-              case 'tagManagerDeleteContainerTriggerGet':
+              case 'tagManagerContainerTriggerDelete':
                 url += `&method=TagManager.deleteContainerTrigger${queryString}`;
                 break;
-              case 'tagManagerDeleteContainerVariableGet':
+              case 'tagManagerContainerVariableDelete':
                 url += `&method=TagManager.deleteContainerVariable${queryString}`;
                 break;
-              case 'tagManagerDeleteContainerVersionGet':
+              case 'tagManagerContainerVersionDelete':
                 url += `&method=TagManager.deleteContainerVersion${queryString}`;
                 break;
-              case 'tagManagerDisablePreviewModeGet':
+              case 'tagManagerDisablePreviewModePost':
                 url += `&method=TagManager.disablePreviewMode${queryString}`;
                 break;
-              case 'tagManagerEnablePreviewModeGet':
+              case 'tagManagerEnablePreviewModePost':
                 url += `&method=TagManager.enablePreviewMode${queryString}`;
                 break;
-              case 'tagManagerExportContainerVersionGet':
+              case 'tagManagerExportContainerVersionPost':
                 url += `&method=TagManager.exportContainerVersion${queryString}`;
                 break;
-              case 'tagManagerImportContainerVersionGet':
+              case 'tagManagerImportContainerVersionPost':
                 url += `&method=TagManager.importContainerVersion${queryString}`;
                 break;
-              case 'tagManagerPauseContainerTagGet':
+              case 'tagManagerPauseContainerTagPost':
                 url += `&method=TagManager.pauseContainerTag${queryString}`;
                 break;
-              case 'tagManagerPublishContainerVersionGet':
+              case 'tagManagerPublishContainerVersionPost':
                 url += `&method=TagManager.publishContainerVersion${queryString}`;
                 break;
-              case 'tagManagerResumeContainerTagGet':
+              case 'tagManagerResumeContainerTagPost':
                 url += `&method=TagManager.resumeContainerTag${queryString}`;
                 break;
-              case 'tagManagerUpdateContainerGet':
+              case 'tagManagerUpdateContainerPost':
                 url += `&method=TagManager.updateContainer${queryString}`;
                 break;
-              case 'tagManagerUpdateContainerTagGet':
+              case 'tagManagerUpdateContainerTagPost':
                 url += `&method=TagManager.updateContainerTag${queryString}`;
                 break;
-              case 'tagManagerUpdateContainerTriggerGet':
+              case 'tagManagerUpdateContainerTriggerPost':
                 url += `&method=TagManager.updateContainerTrigger${queryString}`;
                 break;
-              case 'tagManagerUpdateContainerVariableGet':
+              case 'tagManagerUpdateContainerVariablePost':
                 url += `&method=TagManager.updateContainerVariable${queryString}`;
                 break;
-              case 'tagManagerUpdateContainerVersionGet':
+              case 'tagManagerUpdateContainerVersionPost':
                 url += `&method=TagManager.updateContainerVersion${queryString}`;
                 break;
             }
@@ -5193,7 +5201,7 @@ export class Matomo implements INodeType {
               case 'tourLevelGet':
                 url += `&method=Tour.getLevel${queryString}`;
                 break;
-              case 'tourSkipChallengeGet':
+              case 'tourSkipChallengePost':
                 url += `&method=Tour.skipChallenge${queryString}`;
                 break;
             }
@@ -5219,7 +5227,7 @@ export class Matomo implements INodeType {
             break;
           case 'twoFactorAuth':
             switch (operation) {
-              case 'twoFactorAuthResetTwoFactorAuthGet':
+              case 'twoFactorAuthResetTwoFactorAuthPost':
                 url += `&method=TwoFactorAuth.resetTwoFactorAuth${queryString}`;
                 break;
             }
@@ -5244,7 +5252,7 @@ export class Matomo implements INodeType {
               case 'userCountryLocationFromIpGet':
                 url += `&method=UserCountry.getLocationFromIP${queryString}`;
                 break;
-              case 'userCountrySetLocationProviderGet':
+              case 'userCountrySetLocationProviderPost':
                 url += `&method=UserCountry.setLocationProvider${queryString}`;
                 break;
               case 'userCountryNumberOfDistinctCountriesGet':
@@ -5283,7 +5291,7 @@ export class Matomo implements INodeType {
               case 'usersManagerAvailableCapabilitiesGet':
                 url += `&method=UsersManager.getAvailableCapabilities${queryString}`;
                 break;
-              case 'usersManagerSetUserPreferenceGet':
+              case 'usersManagerSetUserPreferencePost':
                 url += `&method=UsersManager.setUserPreference${queryString}`;
                 break;
               case 'usersManagerUserPreferenceGet':
@@ -5319,13 +5327,13 @@ export class Matomo implements INodeType {
               case 'usersManagerUserByEmailGet':
                 url += `&method=UsersManager.getUserByEmail${queryString}`;
                 break;
-              case 'usersManagerAddUserGet':
+              case 'usersManagerAddUserPost':
                 url += `&method=UsersManager.addUser${queryString}`;
                 break;
-              case 'usersManagerInviteUserGet':
+              case 'usersManagerInviteUserPost':
                 url += `&method=UsersManager.inviteUser${queryString}`;
                 break;
-              case 'usersManagerSetSuperUserAccessGet':
+              case 'usersManagerSetSuperUserAccessPost':
                 url += `&method=UsersManager.setSuperUserAccess${queryString}`;
                 break;
               case 'usersManagerHasSuperUserAccessGet':
@@ -5334,25 +5342,25 @@ export class Matomo implements INodeType {
               case 'usersManagerUsersHavingSuperUserAccessGet':
                 url += `&method=UsersManager.getUsersHavingSuperUserAccess${queryString}`;
                 break;
-              case 'usersManagerUpdateUserGet':
+              case 'usersManagerUpdateUserPost':
                 url += `&method=UsersManager.updateUser${queryString}`;
                 break;
-              case 'usersManagerDeleteUserGet':
+              case 'usersManagerUserDelete':
                 url += `&method=UsersManager.deleteUser${queryString}`;
                 break;
-              case 'usersManagerUserExistsGet':
+              case 'usersManagerUserExistsPost':
                 url += `&method=UsersManager.userExists${queryString}`;
                 break;
-              case 'usersManagerUserEmailExistsGet':
+              case 'usersManagerUserEmailExistsPost':
                 url += `&method=UsersManager.userEmailExists${queryString}`;
                 break;
               case 'usersManagerUserLoginFromUserEmailGet':
                 url += `&method=UsersManager.getUserLoginFromUserEmail${queryString}`;
                 break;
-              case 'usersManagerSetUserAccessGet':
+              case 'usersManagerSetUserAccessPost':
                 url += `&method=UsersManager.setUserAccess${queryString}`;
                 break;
-              case 'usersManagerAddCapabilitiesGet':
+              case 'usersManagerAddCapabilitiesPost':
                 url += `&method=UsersManager.addCapabilities${queryString}`;
                 break;
             }
@@ -5438,8 +5446,12 @@ export class Matomo implements INodeType {
 
         let body;
         const headers = {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/x-www-form-urlencoded'
         };
+
+        if (!operation.includes('Delete') && ['DELETE', 'PATCH', 'POST', 'PUT'].includes(httpMethod)) {
+          body = JSON.parse(requestBody);
+        }
 
         const requestConf = {
           method: httpMethod,
